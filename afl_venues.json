@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 500,
+  "title": "AFL Venues",
+  "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-135,28,0]
+  },
+  "params": [
+    {
+      "name": "AFL_team",
+      "bind": {
+        "value" : "Adelaide",
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
+        "labels":[
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+        ],
+        "name": "AFL Team: "
+      }
+    }
+  ],
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/oceania_topoJSON.topojson",
+        "format": {"type": "topojson", "feature": "oceania.geo"}
+      },
+      "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/afl_stats_venue_only.csv"
+
+      },
+      "transform": [
+          {"filter": "datum.Team == AFL_team"},
+          {"calculate": "abs(datum.Margin)", "as": "Avergae Margin (Absolute)"}
+        ],
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "Margin",
+          "type": "quantitative",
+          "scale": {"domain": [-50,-30,-10, 10, 30, 50],
+                    "range": [200, 100, 50, 25, 50, 100, 200]}
+        },
+        "color":{
+          "field": "Margin",
+          "type":"quantitative",
+          "scale":{"scheme":"blueorange"}
+        }
+      }
+    }
+  ]
+}
