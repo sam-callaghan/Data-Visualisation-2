@@ -20,25 +20,24 @@
     }
   ],
 
-  "data": { "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_team_matchup_reorder_only_cutdown.csv"},
+  "data": { "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_team_matchup_reorder_only_cutdown_negative.csv"},
   "transform": [
       {"filter": "datum.Year == Year_filter"},
-      {"calculate": "abs(datum.Margin)", "as": "Avergae Margin (Absolute)"}
+      {"calculate": "abs(datum.Margin)", "as": "Margin_abs"}
   ],
   "mark": "circle",
   "encoding": {
     "y": {
-      "field": "Team1",
+      "field": "Team 1",
       "type": "nominal"
     },
     "x": {
-      "field": "Team2",
+      "field": "Team 2",
       "type": "nominal"
     },
     "size": {
-      "field": "Margin",
-      "type": "quantitative",
-      "aggregate": "sum"
+      "field": "Margin_abs",
+      "type": "quantitative"
     }
   }
 }
