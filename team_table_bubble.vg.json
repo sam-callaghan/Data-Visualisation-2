@@ -38,6 +38,11 @@
     "size": {
       "field": "Margin_abs",
       "type": "quantitative"
-    }
+    },
+    "color":{
+          "field": "Margin",
+          "type":"quantitative",
+          "scale":{"scheme":"blueorange"}
+        }
   }
 }
