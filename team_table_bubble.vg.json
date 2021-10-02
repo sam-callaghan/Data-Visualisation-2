@@ -6,7 +6,6 @@
     {
       "name": "Year_filter",
       "bind": {
-        "value" : "2012",
         "input": "select",
         "options": [
           "2012",
@@ -30,11 +29,11 @@
   "encoding": {
     "y": {
       "field": "Team1",
-      "type": "ordinal"
+      "type": "nominal"
     },
     "x": {
       "field": "Team2",
-      "type": "ordinal"
+      "type": "nominal"
     },
     "size": {
       "field": "Margin",
