@@ -1,25 +1,25 @@
 Year,Team1,Team2,Margin
-2012,Adelaide,Brisbane Lions,-10
+2012,Adelaide,Brisbane Lions,10
 2012,Adelaide,Carlton,69
-2012,Adelaide,Collingwood,-26
+2012,Adelaide,Collingwood,26
 2013,Adelaide,Brisbane Lions,19
-2013,Adelaide,Carlton,-32
-2013,Adelaide,Collingwood,-27
+2013,Adelaide,Carlton,32
+2013,Adelaide,Collingwood,27
 2012,Brisbane Lions,Adelaide,10
-2012,Brisbane Lions,Carlton,-63.5
-2012,Brisbane Lions,Collingwood,-58
-2013,Brisbane Lions,Adelaide,-19
-2013,Brisbane Lions,Carlton,-13
-2013,Brisbane Lions,Collingwood,-49
-2012,Carlton,Adelaide,-69
+2012,Brisbane Lions,Carlton,63.5
+2012,Brisbane Lions,Collingwood,58
+2013,Brisbane Lions,Adelaide,19
+2013,Brisbane Lions,Carlton,13
+2013,Brisbane Lions,Collingwood,49
+2012,Carlton,Adelaide,69
 2012,Carlton,Brisbane Lions,63.5
 2012,Carlton,Collingwood,41.5
 2013,Carlton,Adelaide,32
 2013,Carlton,Brisbane Lions,13
-2013,Carlton,Collingwood,-29
+2013,Carlton,Collingwood,29
 2012,Collingwood,Adelaide,26
 2012,Collingwood,Brisbane Lions,58
-2012,Collingwood,Carlton,-41.5
+2012,Collingwood,Carlton,41.5
 2013,Collingwood,Adelaide,27
 2013,Collingwood,Brisbane Lions,49
 2013,Collingwood,Carlton,29
