@@ -59,14 +59,14 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/oceania_topoJSON.topojson",
+        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
         "format": {"type": "topojson", "feature": "oceania.geo"}
       },
       "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "white"}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/afl_stats_venue_only.csv"
+        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
 
       },
       "transform": [
