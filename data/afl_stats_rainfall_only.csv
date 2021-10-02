@@ -1,0 +1,721 @@
+Year,Rainfall,Margin
+2012,Adelaide,29
+2012,Adelaide,-9.8
+2012,Adelaide,0
+2012,Adelaide,0
+2012,Brisbane Lions,-3.4
+2012,Brisbane Lions,-15.8
+2012,Brisbane Lions,-13
+2012,Brisbane Lions,-18
+2012,Carlton,0
+2012,Carlton,21.4
+2012,Carlton,4
+2012,Carlton,0
+2012,Collingwood,12.4
+2012,Collingwood,12.6
+2012,Collingwood,-38
+2012,Collingwood,1
+2012,Essendon,1.5
+2012,Essendon,-1.4
+2012,Essendon,0
+2012,Essendon,-1
+2012,Fremantle,11.4
+2012,Fremantle,11
+2012,Fremantle,0
+2012,Fremantle,0
+2012,Geelong,6.4
+2012,Geelong,24.7
+2012,Geelong,0
+2012,Geelong,38
+2012,Gold Coast,-44.4
+2012,Gold Coast,-43
+2012,Gold Coast,0
+2012,Gold Coast,0
+2012,Greater Western Sydney,-69.5
+2012,Greater Western Sydney,-67
+2012,Greater Western Sydney,0
+2012,Greater Western Sydney,-25
+2012,Hawthorn,43.7
+2012,Hawthorn,43.5
+2012,Hawthorn,38
+2012,Hawthorn,-62
+2012,Melbourne,-33.4
+2012,Melbourne,-46.2
+2012,Melbourne,-54
+2012,Melbourne,25
+2012,North Melbourne,0.3
+2012,North Melbourne,22.2
+2012,North Melbourne,14.5
+2012,North Melbourne,0
+2012,Port Adelaide,-22.6
+2012,Port Adelaide,-17
+2012,Port Adelaide,0
+2012,Port Adelaide,0
+2012,Richmond,16.5
+2012,Richmond,-6.6
+2012,Richmond,-4
+2012,Richmond,62
+2012,St Kilda,28.3
+2012,St Kilda,5
+2012,St Kilda,13
+2012,St Kilda,28
+2012,Sydney,27.2
+2012,Sydney,34.4
+2012,Sydney,0
+2012,Sydney,32
+2012,West Coast,34.9
+2012,West Coast,-19.2
+2012,West Coast,25
+2012,West Coast,-2
+2012,Western Bulldogs,-27
+2012,Western Bulldogs,-35.3
+2012,Western Bulldogs,0
+2012,Western Bulldogs,-92
+2013,Adelaide,-5.1
+2013,Adelaide,31
+2013,Adelaide,28
+2013,Adelaide,-14.5
+2013,Brisbane Lions,-5.3
+2013,Brisbane Lions,-22.8
+2013,Brisbane Lions,0
+2013,Brisbane Lions,-23.5
+2013,Carlton,12.1
+2013,Carlton,-18.2
+2013,Carlton,-10
+2013,Carlton,44.5
+2013,Collingwood,2.2
+2013,Collingwood,13.3
+2013,Collingwood,79
+2013,Collingwood,21
+2013,Essendon,5.2
+2013,Essendon,23
+2013,Essendon,-37
+2013,Essendon,31
+2013,Fremantle,26.5
+2013,Fremantle,20.4
+2013,Fremantle,-27
+2013,Fremantle,14.5
+2013,Geelong,25.4
+2013,Geelong,20.7
+2013,Geelong,0
+2013,Geelong,52
+2013,Gold Coast,-2.1
+2013,Gold Coast,-13
+2013,Gold Coast,-34.5
+2013,Gold Coast,-15.7
+2013,Greater Western Sydney,-63.6
+2013,Greater Western Sydney,-72.8
+2013,Greater Western Sydney,0
+2013,Greater Western Sydney,-94
+2013,Hawthorn,28.5
+2013,Hawthorn,31.4
+2013,Hawthorn,15
+2013,Hawthorn,45
+2013,Melbourne,-53.5
+2013,Melbourne,-68.3
+2013,Melbourne,0
+2013,Melbourne,0
+2013,North Melbourne,18.7
+2013,North Melbourne,11.8
+2013,North Melbourne,0
+2013,North Melbourne,0
+2013,Port Adelaide,4.3
+2013,Port Adelaide,2.7
+2013,Port Adelaide,5
+2013,Port Adelaide,-13.5
+2013,Richmond,17.8
+2013,Richmond,11.3
+2013,Richmond,27
+2013,Richmond,5
+2013,St Kilda,-17.4
+2013,St Kilda,-14.3
+2013,St Kilda,-5
+2013,St Kilda,0
+2013,Sydney,26.4
+2013,Sydney,-0.4
+2013,Sydney,38
+2013,Sydney,-18
+2013,West Coast,2.2
+2013,West Coast,-19.1
+2013,West Coast,0
+2013,West Coast,0
+2013,Western Bulldogs,-9.7
+2013,Western Bulldogs,-35
+2013,Western Bulldogs,-35
+2013,Western Bulldogs,-31
+2014,Adelaide,12.2
+2014,Adelaide,15.2
+2014,Adelaide,-3
+2014,Adelaide,0
+2014,Brisbane Lions,-27.7
+2014,Brisbane Lions,-58
+2014,Brisbane Lions,-79
+2014,Brisbane Lions,-48
+2014,Carlton,-9.4
+2014,Carlton,-10.7
+2014,Carlton,0
+2014,Carlton,0
+2014,Collingwood,-8.9
+2014,Collingwood,-3.3
+2014,Collingwood,38
+2014,Collingwood,0
+2014,Essendon,3.9
+2014,Essendon,5
+2014,Essendon,0
+2014,Essendon,0
+2014,Fremantle,20
+2014,Fremantle,19.3
+2014,Fremantle,0
+2014,Fremantle,-5
+2014,Geelong,-5.6
+2014,Geelong,34.2
+2014,Geelong,32
+2014,Geelong,96
+2014,Gold Coast,-4.8
+2014,Gold Coast,-9.2
+2014,Gold Coast,0
+2014,Gold Coast,0
+2014,Greater Western Sydney,-24.7
+2014,Greater Western Sydney,-7
+2014,Greater Western Sydney,-27
+2014,Greater Western Sydney,0
+2014,Hawthorn,26.9
+2014,Hawthorn,46.8
+2014,Hawthorn,0
+2014,Hawthorn,48
+2014,Melbourne,-28.3
+2014,Melbourne,-36.2
+2014,Melbourne,-6.5
+2014,Melbourne,0
+2014,North Melbourne,20.1
+2014,North Melbourne,-5.9
+2014,North Melbourne,-32
+2014,North Melbourne,0
+2014,Port Adelaide,31.2
+2014,Port Adelaide,9.3
+2014,Port Adelaide,0
+2014,Port Adelaide,5
+2014,Richmond,-0.3
+2014,Richmond,12.4
+2014,Richmond,-5.5
+2014,Richmond,0
+2014,St Kilda,-45.1
+2014,St Kilda,-33.8
+2014,St Kilda,0
+2014,St Kilda,-96
+2014,Sydney,31.5
+2014,Sydney,-1.4
+2014,Sydney,79
+2014,Sydney,0
+2014,West Coast,24.9
+2014,West Coast,-11.1
+2014,West Coast,0
+2014,West Coast,0
+2014,Western Bulldogs,-25.1
+2014,Western Bulldogs,-15.7
+2014,Western Bulldogs,16
+2014,Western Bulldogs,0
+2015,Adelaide,19.9
+2015,Adelaide,-19.3
+2015,Adelaide,0
+2015,Adelaide,-24
+2015,Brisbane Lions,-34
+2015,Brisbane Lions,-37.5
+2015,Brisbane Lions,9
+2015,Brisbane Lions,-64
+2015,Carlton,-38.8
+2015,Carlton,-16
+2015,Carlton,-39
+2015,Carlton,0
+2015,Collingwood,1.2
+2015,Collingwood,-14
+2015,Collingwood,0
+2015,Collingwood,48
+2015,Essendon,-32.3
+2015,Essendon,-11
+2015,Essendon,0
+2015,Essendon,-7
+2015,Fremantle,11.4
+2015,Fremantle,-6.3
+2015,Fremantle,0
+2015,Fremantle,31.5
+2015,Geelong,5.6
+2015,Geelong,8.5
+2015,Geelong,0
+2015,Geelong,-48
+2015,Gold Coast,-28.6
+2015,Gold Coast,-41.2
+2015,Gold Coast,0
+2015,Gold Coast,33
+2015,Greater Western Sydney,-7.9
+2015,Greater Western Sydney,-4
+2015,Greater Western Sydney,0
+2015,Greater Western Sydney,24
+2015,Hawthorn,31.3
+2015,Hawthorn,45.1
+2015,Hawthorn,-8
+2015,Hawthorn,0
+2015,Melbourne,-17.6
+2015,Melbourne,-37
+2015,Melbourne,0
+2015,Melbourne,-54
+2015,North Melbourne,3.3
+2015,North Melbourne,11.3
+2015,North Melbourne,0
+2015,North Melbourne,0
+2015,Port Adelaide,4.1
+2015,Port Adelaide,9.7
+2015,Port Adelaide,8
+2015,Port Adelaide,0
+2015,Richmond,12
+2015,Richmond,25.8
+2015,Richmond,0
+2015,Richmond,0
+2015,St Kilda,-4.5
+2015,St Kilda,-48.3
+2015,St Kilda,0
+2015,St Kilda,0
+2015,Sydney,25.6
+2015,Sydney,-3
+2015,Sydney,-4
+2015,Sydney,1.5
+2015,West Coast,25.5
+2015,West Coast,43
+2015,West Coast,69
+2015,West Coast,0
+2015,Western Bulldogs,14.6
+2015,Western Bulldogs,-5.2
+2015,Western Bulldogs,4
+2015,Western Bulldogs,0
+2016,Adelaide,30.7
+2016,Adelaide,25.8
+2016,Adelaide,22
+2016,Adelaide,-3
+2016,Brisbane Lions,-56.9
+2016,Brisbane Lions,-28.3
+2016,Brisbane Lions,-79
+2016,Brisbane Lions,0
+2016,Carlton,-29.2
+2016,Carlton,17.2
+2016,Carlton,0
+2016,Carlton,0
+2016,Collingwood,-8.7
+2016,Collingwood,-27.3
+2016,Collingwood,51.5
+2016,Collingwood,48
+2016,Essendon,-39.2
+2016,Essendon,-50.6
+2016,Essendon,0
+2016,Essendon,0
+2016,Fremantle,-19
+2016,Fremantle,-32.3
+2016,Fremantle,0
+2016,Fremantle,-34.7
+2016,Geelong,26.5
+2016,Geelong,27.6
+2016,Geelong,0
+2016,Geelong,0
+2016,Gold Coast,-10.4
+2016,Gold Coast,-48.3
+2016,Gold Coast,-71
+2016,Gold Coast,-38
+2016,Greater Western Sydney,32.1
+2016,Greater Western Sydney,34.3
+2016,Greater Western Sydney,8.3
+2016,Greater Western Sydney,18
+2016,Hawthorn,10.1
+2016,Hawthorn,24.4
+2016,Hawthorn,0
+2016,Hawthorn,-10
+2016,Melbourne,4.9
+2016,Melbourne,-26
+2016,Melbourne,0
+2016,Melbourne,0
+2016,North Melbourne,7.3
+2016,North Melbourne,-6
+2016,North Melbourne,0
+2016,North Melbourne,-32
+2016,Port Adelaide,10
+2016,Port Adelaide,8.9
+2016,Port Adelaide,0
+2016,Port Adelaide,0
+2016,Richmond,-15.1
+2016,Richmond,-42.8
+2016,Richmond,-9
+2016,Richmond,38
+2016,St Kilda,-3.6
+2016,St Kilda,-7.2
+2016,St Kilda,9
+2016,St Kilda,0
+2016,Sydney,19.3
+2016,Sydney,41.7
+2016,Sydney,0
+2016,Sydney,38
+2016,West Coast,30.4
+2016,West Coast,-4.6
+2016,West Coast,0
+2016,West Coast,32
+2016,Western Bulldogs,13.8
+2016,Western Bulldogs,11.1
+2016,Western Bulldogs,0
+2016,Western Bulldogs,23
+2017,Adelaide,22.9
+2017,Adelaide,34.7
+2017,Adelaide,0
+2017,Adelaide,67
+2017,Brisbane Lions,-17.1
+2017,Brisbane Lions,-45.9
+2017,Brisbane Lions,-31
+2017,Brisbane Lions,0
+2017,Carlton,-18.8
+2017,Carlton,-14.6
+2017,Carlton,-37.5
+2017,Carlton,-26
+2017,Collingwood,0.9
+2017,Collingwood,-4
+2017,Collingwood,0
+2017,Collingwood,-18
+2017,Essendon,-0.7
+2017,Essendon,61
+2017,Essendon,-15
+2017,Essendon,18
+2017,Fremantle,-24.3
+2017,Fremantle,-44.8
+2017,Fremantle,0
+2017,Fremantle,13
+2017,Geelong,6.6
+2017,Geelong,20.6
+2017,Geelong,0
+2017,Geelong,0
+2017,Gold Coast,-31.8
+2017,Gold Coast,24.7
+2017,Gold Coast,0
+2017,Gold Coast,-67
+2017,Greater Western Sydney,11.9
+2017,Greater Western Sydney,-16.5
+2017,Greater Western Sydney,0
+2017,Greater Western Sydney,0
+2017,Hawthorn,-16.5
+2017,Hawthorn,8
+2017,Hawthorn,0
+2017,Hawthorn,0
+2017,Melbourne,9
+2017,Melbourne,-4.3
+2017,Melbourne,0
+2017,Melbourne,0
+2017,North Melbourne,-8
+2017,North Melbourne,-23.7
+2017,North Melbourne,0
+2017,North Melbourne,0
+2017,Port Adelaide,16.9
+2017,Port Adelaide,12.4
+2017,Port Adelaide,90
+2017,Port Adelaide,0
+2017,Richmond,8.2
+2017,Richmond,42.3
+2017,Richmond,0
+2017,Richmond,0
+2017,St Kilda,-0.6
+2017,St Kilda,-16.7
+2017,St Kilda,31
+2017,St Kilda,9
+2017,Sydney,20.1
+2017,Sydney,11.6
+2017,Sydney,0
+2017,Sydney,46
+2017,West Coast,-1.2
+2017,West Coast,16
+2017,West Coast,0
+2017,West Coast,17
+2017,Western Bulldogs,0.6
+2017,Western Bulldogs,-4
+2017,Western Bulldogs,0
+2017,Western Bulldogs,-46
+2018,Adelaide,5.6
+2018,Adelaide,1.8
+2018,Adelaide,0
+2018,Adelaide,-3
+2018,Brisbane Lions,-5.7
+2018,Brisbane Lions,-19
+2018,Brisbane Lions,-28.5
+2018,Brisbane Lions,0
+2018,Carlton,-46
+2018,Carlton,-32.5
+2018,Carlton,-17
+2018,Carlton,0
+2018,Collingwood,17
+2018,Collingwood,-3.5
+2018,Collingwood,31
+2018,Collingwood,0
+2018,Essendon,5.4
+2018,Essendon,-2.8
+2018,Essendon,0
+2018,Essendon,22
+2018,Fremantle,-20.3
+2018,Fremantle,-34.7
+2018,Fremantle,-58
+2018,Fremantle,6
+2018,Geelong,27.4
+2018,Geelong,19.9
+2018,Geelong,-11
+2018,Geelong,-7.5
+2018,Gold Coast,-40.7
+2018,Gold Coast,-33.7
+2018,Gold Coast,0
+2018,Gold Coast,0
+2018,Greater Western Sydney,-1
+2018,Greater Western Sydney,39
+2018,Greater Western Sydney,0
+2018,Greater Western Sydney,49
+2018,Hawthorn,6.3
+2018,Hawthorn,27.7
+2018,Hawthorn,11
+2018,Hawthorn,29.5
+2018,Melbourne,29.9
+2018,Melbourne,6
+2018,Melbourne,0
+2018,Melbourne,-35
+2018,North Melbourne,7.4
+2018,North Melbourne,7
+2018,North Melbourne,0
+2018,North Melbourne,0
+2018,Port Adelaide,-1.3
+2018,Port Adelaide,12.4
+2018,Port Adelaide,44
+2018,Port Adelaide,-15.5
+2018,Richmond,21.8
+2018,Richmond,30.2
+2018,Richmond,0
+2018,Richmond,18
+2018,St Kilda,-15.5
+2018,St Kilda,-45.2
+2018,St Kilda,0
+2018,St Kilda,0
+2018,Sydney,3.5
+2018,Sydney,29
+2018,Sydney,0
+2018,Sydney,-20.5
+2018,West Coast,19
+2018,West Coast,0
+2018,West Coast,42
+2018,West Coast,54
+2018,Western Bulldogs,-23.9
+2018,Western Bulldogs,-5.1
+2018,Western Bulldogs,-13.5
+2018,Western Bulldogs,-54
+2019,Adelaide,0.4
+2019,Adelaide,1.8
+2019,Adelaide,0
+2019,Adelaide,0
+2019,Brisbane Lions,9.9
+2019,Brisbane Lions,19.6
+2019,Brisbane Lions,-16
+2019,Brisbane Lions,0
+2019,Carlton,-13.2
+2019,Carlton,-13.8
+2019,Carlton,0
+2019,Carlton,0
+2019,Collingwood,10.7
+2019,Collingwood,15.4
+2019,Collingwood,0
+2019,Collingwood,0
+2019,Essendon,-1.4
+2019,Essendon,-24.3
+2019,Essendon,0
+2019,Essendon,32
+2019,Fremantle,1.9
+2019,Fremantle,-7
+2019,Fremantle,-45
+2019,Fremantle,-32
+2019,Geelong,19.3
+2019,Geelong,25.4
+2019,Geelong,0
+2019,Geelong,0
+2019,Gold Coast,-42
+2019,Gold Coast,-34.8
+2019,Gold Coast,0
+2019,Gold Coast,0
+2019,Greater Western Sydney,6.4
+2019,Greater Western Sydney,16
+2019,Greater Western Sydney,0
+2019,Greater Western Sydney,0
+2019,Hawthorn,10.4
+2019,Hawthorn,-16.8
+2019,Hawthorn,31
+2019,Hawthorn,0
+2019,Melbourne,-20.5
+2019,Melbourne,-17.4
+2019,Melbourne,0
+2019,Melbourne,0
+2019,North Melbourne,-13.2
+2019,North Melbourne,21.9
+2019,North Melbourne,-49
+2019,North Melbourne,0
+2019,Port Adelaide,11.1
+2019,Port Adelaide,-12.3
+2019,Port Adelaide,-28
+2019,Port Adelaide,42
+2019,Richmond,14.1
+2019,Richmond,18
+2019,Richmond,0
+2019,Richmond,0
+2019,St Kilda,-8.4
+2019,St Kilda,-11.5
+2019,St Kilda,0
+2019,St Kilda,0
+2019,Sydney,1.3
+2019,Sydney,-32
+2019,Sydney,-1
+2019,Sydney,0
+2019,West Coast,3.3
+2019,West Coast,16.5
+2019,West Coast,70
+2019,West Coast,-42
+2019,Western Bulldogs,-10.1
+2019,Western Bulldogs,24.7
+2019,Western Bulldogs,20.5
+2019,Western Bulldogs,0
+2020,Adelaide,-29.6
+2020,Adelaide,16
+2020,Adelaide,0
+2020,Adelaide,0
+2020,Brisbane Lions,8.6
+2020,Brisbane Lions,21
+2020,Brisbane Lions,24
+2020,Brisbane Lions,4
+2020,Carlton,-1.2
+2020,Carlton,-9.4
+2020,Carlton,0
+2020,Carlton,0
+2020,Collingwood,5.1
+2020,Collingwood,-11
+2020,Collingwood,0
+2020,Collingwood,0
+2020,Essendon,-15
+2020,Essendon,-19.5
+2020,Essendon,6
+2020,Essendon,-19
+2020,Fremantle,-1.4
+2020,Fremantle,-18.7
+2020,Fremantle,0
+2020,Fremantle,16
+2020,Geelong,26
+2020,Geelong,5.8
+2020,Geelong,-26
+2020,Geelong,0
+2020,Gold Coast,-11.1
+2020,Gold Coast,10.3
+2020,Gold Coast,0
+2020,Gold Coast,0
+2020,Greater Western Sydney,-4.3
+2020,Greater Western Sydney,2.5
+2020,Greater Western Sydney,0
+2020,Greater Western Sydney,0
+2020,Hawthorn,-7.4
+2020,Hawthorn,-23
+2020,Hawthorn,0
+2020,Hawthorn,-24
+2020,Melbourne,2.7
+2020,Melbourne,8
+2020,Melbourne,0
+2020,Melbourne,7.5
+2020,North Melbourne,-21.5
+2020,North Melbourne,-18.5
+2020,North Melbourne,0
+2020,North Melbourne,0
+2020,Port Adelaide,17.4
+2020,Port Adelaide,15.7
+2020,Port Adelaide,0
+2020,Port Adelaide,0
+2020,Richmond,15.7
+2020,Richmond,3
+2020,Richmond,26
+2020,Richmond,0
+2020,St Kilda,6.4
+2020,St Kilda,12
+2020,St Kilda,0
+2020,St Kilda,0
+2020,Sydney,-8.3
+2020,Sydney,-20.3
+2020,Sydney,-6
+2020,Sydney,0
+2020,West Coast,4.8
+2020,West Coast,13.8
+2020,West Coast,0
+2020,West Coast,32
+2020,Western Bulldogs,1.2
+2020,Western Bulldogs,18.5
+2020,Western Bulldogs,-24
+2020,Western Bulldogs,0
+Total,Adelaide,9.6
+Total,Adelaide,10.8
+Total,Adelaide,15.7
+Total,Adelaide,4.5
+Total,Brisbane Lions,-14.6
+Total,Brisbane Lions,-20.7
+Total,Brisbane Lions,-26.7
+Total,Brisbane Lions,-29.9
+Total,Carlton,-16.1
+Total,Carlton,-8.5
+Total,Carlton,-19.9
+Total,Carlton,9.3
+Total,Collingwood,3.6
+Total,Collingwood,-2.4
+Total,Collingwood,32.3
+Total,Collingwood,20
+Total,Essendon,-8.1
+Total,Essendon,-2.3
+Total,Essendon,-15.3
+Total,Essendon,10.9
+Total,Fremantle,0.7
+Total,Fremantle,-10.3
+Total,Fremantle,-43.3
+Total,Fremantle,1.2
+Total,Geelong,15.3
+Total,Geelong,20.8
+Total,Geelong,-1.7
+Total,Geelong,26.1
+Total,Gold Coast,-24
+Total,Gold Coast,-20.9
+Total,Gold Coast,-52.8
+Total,Gold Coast,-21.9
+Total,Greater Western Sydney,-13.4
+Total,Greater Western Sydney,-8.4
+Total,Greater Western Sydney,-9.3
+Total,Greater Western Sydney,-5.6
+Total,Hawthorn,14.8
+Total,Hawthorn,20.8
+Total,Hawthorn,17.4
+Total,Hawthorn,4.4
+Total,Melbourne,-11.9
+Total,Melbourne,-24.6
+Total,Melbourne,-30.3
+Total,Melbourne,-14.1
+Total,North Melbourne,1.6
+Total,North Melbourne,2.2
+Total,North Melbourne,-22.2
+Total,North Melbourne,-32
+Total,Port Adelaide,7.9
+Total,Port Adelaide,4.6
+Total,Port Adelaide,23.8
+Total,Port Adelaide,4.5
+Total,Richmond,10.1
+Total,Richmond,10.4
+Total,Richmond,6.9
+Total,Richmond,30.8
+Total,St Kilda,-6.7
+Total,St Kilda,-17.8
+Total,St Kilda,12
+Total,St Kilda,-19.7
+Total,Sydney,16.3
+Total,Sydney,6.6
+Total,Sydney,21.2
+Total,Sydney,13.2
+Total,West Coast,16
+Total,West Coast,3.9
+Total,West Coast,51.5
+Total,West Coast,15.2
+Total,Western Bulldogs,-7.3
+Total,Western Bulldogs,-5.1
+Total,Western Bulldogs,-5.3
+Total,Western Bulldogs,-40
