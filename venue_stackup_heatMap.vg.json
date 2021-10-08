@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+   "params": [
+    {
+      "name": "Year_filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "Total"
+       ],
+        "labels":[
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "Total"
+        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Team_filter",
+      "select": {"type": "point", "fields": ["Team"]},
+      "bind": {
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
+        "name": "AFL Team: "
+      }
+    }
+  ],
+  "data": {"url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_stackup_only.csv"},
+
+  "transform": [
+      {"filter": "datum.Year == Year_filter"}
+  ],
+
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Team", "type": "nominal"},
+    "x": {"field": "Venue", "type": "nominal"},
+    "color": {"aggregate": "mean", "field": "Margin"},
+    "stroke": {
+      "condition": {
+        "param": "Team_filter",
+        "empty": false,
+        "value": "black"
+      },
+      "value": null
+    },
+    "strokeWidth":{
+      "condition": {
+        "param": "Team_filter", "value": 1}
+    },
+    "opacity": {
+      "condition": {"param": "Team_filter", "value": 1},
+      "value": 0.3
+    },
+    "order": {"condition": {"param": "Team_filter", "value": 1}, "value": 0}
+  }
+}
