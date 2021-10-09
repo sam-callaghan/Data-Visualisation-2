@@ -57,11 +57,15 @@
           "West Coast",
           "Western Bulldogs"
        ],
-        "name": "AFL Team: "
+        "name": "AFL Team:"
       }
     }
   ],
   "data": {"url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_stackup_only.csv"},
+
+  "config": {
+    "background": "grey"
+  },
 
   "transform": [
       {"filter": "datum.Year == Year_filter"}
@@ -69,17 +73,34 @@
 
   "mark": "rect",
   "encoding": {
-    "y": {"field": "Team", "type": "nominal"},
-    "x": {"field": "Venue", "type": "nominal"},
-    "color": {"aggregate": "mean", "field": "Margin"},
-    "stroke": {
-      "condition": {
-        "param": "Team_filter",
-        "empty": false,
-        "value": "black"
-      },
-      "value": null
-    },
+    "y": {"field": "Team", 
+          "type": "nominal",
+           "axis": {
+                "titleColor": "white",
+                "labelColor": "white"
+              }
+              },
+    "x": {"field": "Venue", 
+          "type": "nominal",
+          "axis": {
+                "titleColor": "white",
+                "labelColor": "white"
+              }},
+    "color": {"aggregate": "mean", 
+              "field": "Margin", 
+              "scale":{"scheme":"blueorange", "domainMid": 0}},
+              "legend": {
+                "titleColor": "white",
+                "labelColor": "white"
+              },
+              "stroke": {
+                "condition": {
+                  "param": "Team_filter",
+                  "empty": false,
+                  "value": "black"
+                },
+              "value": null
+              },
     "strokeWidth":{
       "condition": {
         "param": "Team_filter", "value": 1}
