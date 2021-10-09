@@ -23,6 +23,7 @@
     },
     {
       "name": "Team_filter",
+      "select": {"type": "point", "fields": ["Team"]},
       "bind": {
         "input": "select",
         "options": [
@@ -55,7 +56,7 @@
       {"calculate": "abs(datum.Margin)", "as": "Margin_abs"}
   ],
   "config": {
-    "background": "dimgray"
+    "background": "grey"
   },
   "mark": "circle",
   "encoding": {
@@ -84,14 +85,29 @@
             "symbolFillColor": "white"
               }
     },
-    "color":{
-          "field": "Margin",
-          "type":"quantitative",
-          "scale":{"scheme":"blueorange", "domainMid": 0},
-          "legend": {
-            "titleColor": "white",
-            "labelColor": "white"
-              }
-        }
+    "color": {"aggregate": "mean", 
+              "field": "Margin", 
+              "scale":{"scheme":"blueorange", "domainMid": 0}},
+              "legend": {
+                "titleColor": "white",
+                "labelColor": "white"
+              },
+              "stroke": {
+                "condition": {
+                  "param": "Team_filter",
+                  "empty": false,
+                  "value": "black"
+                },
+              "value": null
+              },
+    "strokeWidth":{
+      "condition": {
+        "param": "Team_filter", "value": 1}
+    },
+    "opacity": {
+      "condition": {"param": "Team_filter", "value": 1},
+      "value": 0.3
+    },
+    "order": {"condition": {"param": "Team_filter", "value": 1}, "value": 0}
   }
 }
