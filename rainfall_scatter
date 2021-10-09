@@ -1,0 +1,131 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
+  "width": 400,
+ "height": 200,
+  "params": [
+    {
+      "name": "Year_filter",
+      "bind": {
+        "value": "2012",
+        "input": "select",
+        "options": [
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "Total"
+       ],
+        "labels":[
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "Total"
+        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Team_filter",
+      "bind": {
+        "value" : "Adelaide",
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
+        "labels":[
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+        ],
+        "name": "AFL Team: "
+      }
+    }
+  ],
+  "data": {
+"url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_rainfall_scatter_only.csv"
+  },
+  "config": {
+    "background": "grey"
+  },
+  "transform": [
+      {"filter": "datum.Year == Year_filter"},
+      {"filter": "datum.Team == Team_filter"}
+  ],
+  "mark" : "circle",
+  "encoding": {
+    "x": {
+      "field": "Round",
+      "type": "nominal",
+      "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+      "scale": {"padding": 20},
+      "axis": {
+        "orient": "top",
+        "gridColor": {
+          "condition": {"test": "datum.value === 0", "value": "black"},
+          "value": "#ddd"
+        }
+      }
+    },
+   "y": {
+      "field": "Rainfall(mm)",
+      "type": "quantitative",
+      "scale": {"type": "linear"},
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelAngle": 0,
+        "labelPadding": 4
+      }
+    },
+    "size": {"value": 180},
+    "color":{
+          "field": "Margin",
+          "type":"quantitative",
+          "scale":{"scheme":"blueorange"}
+        }
+  }
+}
