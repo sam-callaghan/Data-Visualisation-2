@@ -51,8 +51,7 @@
   ],
   "transform": [
       {"filter": "datum.Year == Year_filter"},
-      {"filter":"datum.Team == Team_filter"},
-      {"calculate": "datum.['Average Height Team 1'] - datum.['Average Height Team 2']", "as": "Height Differential"}
+      {"filter":"datum.Team == Team_filter"}
   ],
   "data": {
     "url":"https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_list_stats_only.csv"
@@ -65,7 +64,7 @@
       "encoding": {
         "x": {
           "field": "Round", "type": "nominal", 
-          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
           "axis": {
             "domain": false,
             "ticks": false,
@@ -86,12 +85,12 @@
     },
     {
       "width": 600,
-      "height": 240,
+      "height": 120,
       "mark": "bar",
       "encoding": {
         "x": {
           "field": "Round", "type": "nominal", 
-          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
           "axis": {
             "domain": false,
             "ticks": false,
@@ -100,7 +99,7 @@
           }
         },
         "y": {
-          "field": "Average Height Team 1", "type": "quantitative",
+          "field": "Height Differential", "type": "quantitative",
           "axis": {
             "gridColor": {
               "condition": {"test": "datum.value === 0", "value": "black"},
@@ -109,7 +108,32 @@
           }
         }
       }
-
+    },
+    {
+      "width": 600,
+      "height": 120,
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Round", "type": "nominal", 
+          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labelAngle": 0,
+            "labelPadding": 4
+          }
+        },
+        "y": {
+          "field": "Age Differential", "type": "quantitative",
+          "axis": {
+            "gridColor": {
+              "condition": {"test": "datum.value === 0", "value": "black"},
+              "value": "#ddd"
+            }
+          }
+        }
+      }
     }
   ]
 }
