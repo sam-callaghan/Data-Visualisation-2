@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 500,
+  "width": 520,
+  "height": 470,
   "title": "AFL Venues",
-  "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-135,28,0]
+  "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-133,28,0]
   },
   "params": [
     {
@@ -31,30 +31,16 @@
           "West Coast",
           "Western Bulldogs"
        ],
-        "labels":[
-          "Adelaide",
-          "Brisbane Lions",
-          "Carlton",
-          "Collingwood",
-          "Essendon",
-          "Fremantle",
-          "Geelong",
-          "Gold Coast",
-          "Greater Western Sydney",
-          "Hawthorn",
-          "Melbourne",
-          "North Melbourne",
-          "Port Adelaide",
-          "Richmond",
-          "St Kilda",
-          "Sydney",
-          "West Coast",
-          "Western Bulldogs"
-        ],
         "name": "AFL Team: "
       }
-    }
+    },
+      
+    {"name": "Margin_Param",
+    "value": "datum.Margin" }
   ],
+  "config": {
+    "background": "grey"
+  },
 
   "layer": [
     {
@@ -62,7 +48,7 @@
         "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
         "format": {"type": "topojson", "feature": "oceania.geo"}
       },
-      "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
     },
     {
       "data": {
@@ -78,15 +64,13 @@
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
         "size": {
-          "field": "Margin",
-          "type": "quantitative",
-          "scale": {"domain": [-50,-30,-10, 10, 30, 50],
-                    "range": [200, 100, 50, 25, 50, 100, 200]}
+          "field": "Length",
+          "type": "quantitative"
         },
         "color":{
           "field": "Margin",
           "type":"quantitative",
-          "scale":{"scheme":"blueorange"}
+          "scale":{"scheme":"blueorange", "domainMid": 0, "stroke": "black"}
         }
       }
     }
