@@ -1,48 +1,97 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Punchcard Visualization like on Github. The day on y-axis uses a custom order from Monday to Sunday.  The sort property supports both full day names (e.g., 'Monday') and their three letter initials (e.g., 'mon') -- both of which are case insensitive.",
-
-    "params": [
+"params": [
     {
       "name": "Year_filter",
       "bind": {
         "input": "select",
         "options": [
           "2012",
-          "2013"
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "Total"
        ],
-        "labels":[
-         "2012",
-         "2013"
-        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Team_filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
         "name": "AFL Team: "
       }
     }
   ],
-
-  "data": { "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_team_matchup_reorder_only_cutdown_negative.csv"},
+  "data": { "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_team_matchup_only.csv"},
   "transform": [
       {"filter": "datum.Year == Year_filter"},
       {"calculate": "abs(datum.Margin)", "as": "Margin_abs"}
   ],
+  "config": {
+    "background": "dimgray"
+  },
   "mark": "circle",
   "encoding": {
     "y": {
       "field": "Team 1",
-      "type": "nominal"
+      "type": "nominal",
+      "axis": {
+        "titleColor": "white",
+        "labelColor": "white"
+      }
     },
     "x": {
       "field": "Team 2",
-      "type": "nominal"
+      "type": "nominal",
+      "axis": {
+        "titleColor": "white",
+        "labelColor": "white"
+      }
     },
     "size": {
       "field": "Margin_abs",
-      "type": "quantitative"
+      "type": "quantitative",
+      "legend": {
+            "titleColor": "white",
+            "labelColor": "white",
+            "symbolFillColor": "white"
+              }
     },
     "color":{
           "field": "Margin",
           "type":"quantitative",
-          "scale":{"scheme":"blueorange"}
+          "scale":{"scheme":"blueorange", "domainMid": 0},
+          "legend": {
+            "titleColor": "white",
+            "labelColor": "white"
+              }
         }
   }
 }
