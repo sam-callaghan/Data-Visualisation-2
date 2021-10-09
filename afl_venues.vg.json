@@ -9,7 +9,6 @@
     {
       "name": "AFL_team",
       "bind": {
-        "value" : "Adelaide",
         "input": "select",
         "options": [
           "Adelaide",
@@ -33,10 +32,7 @@
        ],
         "name": "AFL Team: "
       }
-    },
-      
-    {"name": "Margin_Param",
-    "value": "datum.Margin" }
+    }
   ],
   "config": {
     "background": "grey"
@@ -56,10 +52,11 @@
 
       },
       "transform": [
-          {"filter": "datum.Team == AFL_team"},
-          {"calculate": "abs(datum.Margin)", "as": "Avergae Margin (Absolute)"}
+          {"filter": "datum.Team == AFL_team"}
         ],
-      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "mark": {"type": "circle", 
+               "tooltip": {"content": "data"}
+               },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -67,11 +64,16 @@
           "field": "Length",
           "type": "quantitative"
         },
+        "stroke":{
+            "condition": {
+              "test": "datum.Home === null", "value": "red"},
+              "value": "black"
+            },
         "color":{
           "field": "Margin",
           "type":"quantitative",
-          "scale":{"scheme":"blueorange", "domainMid": 0, "stroke": "black"}
-        }
+          "scale":{"scheme":"blueorange", "domainMid": 0}
+            }
       }
     }
   ]
