@@ -56,10 +56,19 @@
   "data": {
     "url":"https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_list_stats_only.csv"
   },
-  "vconcat": [
+  "columns": 2,
+  "spacing": 30,
+  "concat": [
     {
       "width": 600,
-      "height": 240,
+      "height": 200,
+      "title": {
+        "text":"Margin for AFL teams",
+        "subtitle": "Filter the the following charts by your team and which season you would like to analyse ",
+        "anchor": "start",
+        "offset": 20,
+        "dx": 50
+      },
       "mark": "bar",
       "encoding": {
         "x": {
@@ -83,57 +92,61 @@
         }
       }
     },
-    {
-      "width": 600,
-      "height": 120,
-      "mark": "bar",
-      "encoding": {
-        "x": {
-          "field": "Round", "type": "nominal", 
-          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
-          "axis": {
-            "domain": false,
-            "ticks": false,
-            "labelAngle": 0,
-            "labelPadding": 4
+    {"vconcat": [
+      {
+        "width": 600,
+        "height": 150,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Round", "type": "nominal", 
+            "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+            "axis": {
+              "domain": false,
+              "ticks": false,
+              "labelAngle": 0,
+              "labelPadding": 4
+            }
+          },
+          "y": {
+            "field": "Height Differential", "type": "quantitative",
+            "axis": {
+              "gridColor": {
+                "condition": {"test": "datum.value === 0", "value": "black"},
+                "value": "#ddd"
+              }
+            }
           }
-        },
-        "y": {
-          "field": "Height Differential", "type": "quantitative",
-          "axis": {
-            "gridColor": {
-              "condition": {"test": "datum.value === 0", "value": "black"},
-              "value": "#ddd"
+        }
+      },
+      {
+        "width": 600,
+        "height": 150,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Round", "type": "nominal", 
+            "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+            "axis": {
+              "domain": false,
+              "ticks": false,
+              "labelAngle": 0,
+              "labelPadding": 4
+            }
+          },
+          "y": {
+            "field": "Age Differential", "type": "quantitative",
+            "axis": {
+              "gridColor": {
+                "condition": {"test": "datum.value === 0", "value": "black"},
+                "value": "#ddd"
+              }
             }
           }
         }
       }
-    },
-    {
-      "width": 600,
-      "height": 120,
-      "mark": "bar",
-      "encoding": {
-        "x": {
-          "field": "Round", "type": "nominal", 
-          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
-          "axis": {
-            "domain": false,
-            "ticks": false,
-            "labelAngle": 0,
-            "labelPadding": 4
-          }
-        },
-        "y": {
-          "field": "Age Differential", "type": "quantitative",
-          "axis": {
-            "gridColor": {
-              "condition": {"test": "datum.value === 0", "value": "black"},
-              "value": "#ddd"
-            }
-          }
-        }
-      }
+    ]
     }
   ]
 }
+
