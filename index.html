@@ -43,6 +43,22 @@
     <div class="pure-g">
         <div class="pure-u-1-1">
           <div class="description description-left">
+            <h2>Venue Stackup</h2>
+            <p>Compare how your team performs at particular grounds</p>
+          </div>
+        </div>
+    </div>
+       
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="HeatMap" class="vis-container"></div>
+        </div>
+    </div>
+      
+      
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
             <h2>Venue Stackups</h2>
             <p>Compare how your team performs at particular grounds</p>
           </div>
@@ -75,7 +91,11 @@
   vegaEmbed('#Bubble', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-   
+         
+  var spec2 = "venue_stackup_heatMap.vg.json";
+  vegaEmbed('#HeatMap', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
   var spec2 = "afl_venues.vg.json";
   vegaEmbed('#Map', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
