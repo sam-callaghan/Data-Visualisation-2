@@ -3,6 +3,7 @@
    "params": [
     {
       "name": "Year_filter",
+      "value": "Total",
       "bind": {
         "input": "select",
         "options": [
@@ -93,7 +94,7 @@
                 "titleColor": "white",
                 "labelColor": "white"
               },
-              "stroke": {
+     "stroke": {
                 "condition": {
                   "param": "Team_filter",
                   "empty": false,
@@ -102,9 +103,10 @@
               "value": null
               },
     "strokeWidth":{
-      "condition": {
-        "param": "Team_filter", "value": 1}
-    },
+              "condition": {
+                "param": "Team_filter", "value": 1}
+              },
+    "tooltip":[ {"field": "Margin", "type": "nominal", "title": "Margin"}],
     "opacity": {
       "condition": {"param": "Team_filter", "value": 1},
       "value": 0.3
