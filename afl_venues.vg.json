@@ -1,10 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 520,
-  "height": 470,
-  "title": "AFL Venues",
-  "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-133,28,0]
-  },
   "params": [
     {
       "name": "AFL_team",
@@ -34,47 +29,49 @@
       }
     }
   ],
-  "config": {
-    "background": "grey"
-  },
-
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
-        "format": {"type": "topojson", "feature": "oceania.geo"}
+      "width": 520,
+      "height": 470,
+      "title": "AFL Venues",
+      "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-133,28,0]
       },
-      "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
-
+      
+      "config": {
+        "background": "grey"
       },
-      "transform": [
-          {"filter": "datum.Team == AFL_team"}
-        ],
-      "mark": {"type": "circle", 
-               "tooltip": {"content": "data"}
-               },
-      "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
-        "size": {
-          "field": "Length",
-          "type": "quantitative"
+
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
+            "format": {"type": "topojson", "feature": "oceania.geo"}
+          },
+          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
         },
-        "stroke":{
-            "condition": {
-              "test": "datum.Home === null", "value": "red"},
-              "value": "black"
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
             },
-        "color":{
-          "field": "Margin",
-          "type":"quantitative",
-          "scale":{"scheme":"blueorange", "domainMid": 0}
-            }
-      }
-    }
-  ]
+          "transform": [
+              {"filter": "datum.Team == AFL_team"}
+            ],
+          "mark": {"type": "circle", 
+                  "tooltip": {"content": "data"}
+                  },
+          "encoding": {
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
+            "size": {"value": 500},
+            "stroke":{
+                "condition": {
+                  "test": "datum.Home === null", "value": "red"},
+                  "value": "black"
+                },
+            "color":{
+              "field": "Margin Bin",
+              "type":"quantitative",
+              "scale":{"scheme":"blueorange", "domainMid": 0}
+                }
+          }
+        }
+      ]
 }
