@@ -29,11 +29,11 @@
       }
     },
     {"name": "center_to",
-            "value": [144.5, -37.8],
+            "value": [144.7, -38],
             "bind": {
                 "input": "select",
                 "options": [
-                    [144.5, -37.8],
+                    [144.7, -38],
                     [138.6, -34.9],
                     [153.3, -27.8],
                     [151.15, -33.85],
@@ -45,11 +45,11 @@
             }
     },
     {"name": "zoom_to",
-            "value": 20000,
+            "value": 35000,
             "bind": {
                 "input": "select",
                 "options": [
-                    20000, 60000, 20000, 110000, 120000
+                    30000, 60000, 20000, 110000, 120000
                 ],
                 "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"],
                 "name": "City (zoom): "
@@ -58,7 +58,6 @@
   ],
       "width": 520,
       "height": 300,
-      "title": "AFL Venues",
       "projection": {"type": "equirectangular",
         "center": { "expr": "center_to" }, "scale": { "expr": "zoom_to" }
       },
@@ -70,8 +69,8 @@
       "layer": [
         {
           "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
-            "format": {"type": "topojson", "feature": "oceania.geo"}
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/australia_mapData.topojson",
+            "format": {"type": "topojson", "feature": "collection"}
           },
           "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
         },
@@ -82,9 +81,7 @@
           "transform": [
               {"filter": "datum.Team == AFL_team"}
             ],
-          "mark": {"type": "circle", 
-                  "tooltip": {"content": "data"}
-                  },
+                  
           "encoding": {
             "longitude": {"field": "Longitude", "type": "quantitative"},
             "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -100,9 +97,17 @@
             "color":{
               "field": "Margin",
               "type":"quantitative",
-              "scale":{"scheme":"blueorange", "domainMid": 0}
-                }
-          }
+              "scale":{"scheme":"blueorange", "domainMid": 0, "domainMax": 100, "domainMin": -100}
+                     },
+            "tooltip":[ {"field": "Venue", "type": "nominal", "title": "Venue"}, 
+                        {"field": "Margin", "type": "quantitative", "title": "Average Margin"}
+                      ]
+          },
+
+          "layer": [
+          {"mark": {"type": "circle"}}
+          ]
         }
+
       ]
 }
