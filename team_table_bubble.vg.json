@@ -61,7 +61,7 @@
   "mark": "circle",
   "encoding": {
     "y": {
-      "field": "Team 1",
+      "field": "Team",
       "type": "nominal",
       "axis": {
         "titleColor": "white",
@@ -96,7 +96,7 @@
                 "condition": {
                   "param": "Team_filter",
                   "empty": false,
-                  "value": "black"
+                  "value": "grey"
                 },
               "value": null
               },
