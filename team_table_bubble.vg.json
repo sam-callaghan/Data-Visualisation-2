@@ -4,6 +4,7 @@
 "params": [
     {
       "name": "Year_filter",
+      "value": "Total",
       "bind": {
         "input": "select",
         "options": [
