@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "params": [
+    {
+      "name": "AFL_team",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
+        "name": "AFL Team: "
+      }
+    },
+    {"name": "center_to",
+            "value": [144.5, -37.8],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [144.5, -37.8],
+                    [138.6, -34.9],
+                    [153.3, -27.8],
+                    [151.15, -33.85],
+                    [115.83,-31.95]
+
+                ],
+                "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"],
+                "name": "City (center): "
+            }
+    },
+    {"name": "zoom_to",
+            "value": 20000,
+            "bind": {
+                "input": "select",
+                "options": [
+                    20000, 60000, 20000, 110000, 120000
+                ],
+                "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"],
+                "name": "City (zoom): "
+            }
+    }
+  ],
+      "width": 520,
+      "height": 300,
+      "title": "AFL Venues",
+      "projection": {"type": "equirectangular",
+        "center": { "expr": "center_to" }, "scale": { "expr": "zoom_to" }
+      },
+      
+      "config": {
+        "background": "grey"
+      },
+
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
+            "format": {"type": "topojson", "feature": "oceania.geo"}
+          },
+          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
+            },
+          "transform": [
+              {"filter": "datum.Team == AFL_team"}
+            ],
+          "mark": {"type": "circle", 
+                  "tooltip": {"content": "data"}
+                  },
+          "encoding": {
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
+            "size": {
+              "field": "Length",
+              "type": "quantitative"
+            },
+            "stroke":{
+                "condition": {
+                  "test": "datum.Home === null", "value": "red"},
+                  "value": "black"
+                },
+            "color":{
+              "field": "Margin",
+              "type":"quantitative",
+              "scale":{"scheme":"blueorange", "domainMid": 0}
+                }
+          }
+        }
+      ]
+}
