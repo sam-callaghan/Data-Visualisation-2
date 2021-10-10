@@ -31,7 +31,6 @@
   ],
       "width": 520,
       "height": 470,
-      "title": "AFL Venues",
       "projection": {"type": "azimuthalEqualArea", "scale": 800, "rotate": [-133,28,0]
       },
       
@@ -54,9 +53,7 @@
           "transform": [
               {"filter": "datum.Team == AFL_team"}
             ],
-          "mark": {"type": "circle", 
-                  "tooltip": {"content": "data"}
-                  },
+          "mark": {"type": "circle"},
           "encoding": {
             "longitude": {"field": "Longitude", "type": "quantitative"},
             "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -69,8 +66,12 @@
             "color":{
               "field": "Margin Bin",
               "type":"quantitative",
-              "scale":{"scheme":"blueorange", "domainMid": 0}
-                }
+              "scale":{"scheme":"blueorange", "domainMid": 0, "domainMax": 100, "domainMin": -100}
+                }, 
+            "tooltip":[ {"field": "City Bin", "type": "nominal", "title": "Venue/City"}, 
+                        {"field": "Margin Bin", "type": "quantitative", "title": "Average Margin"}
+                        
+            ]
           }
         }
       ]
