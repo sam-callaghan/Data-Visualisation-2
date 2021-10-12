@@ -13,48 +13,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    
   <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  
+ <!-- Import Sherrin Font-->
+  <link href="//db.onlinewebfonts.com/c/531507043252cd73b0af82a7bc7cd7b1?family=URWAgendaW01-Bold" rel="stylesheet" type="text/css"/>
 
 </head>
+
+<body style="background-color:green;"></body>
+<style>
+  h1 {text-align: center; font-size: 70px; color: white; font-family: "URWAgendaW01-Bold"; padding: 0pxpx}
+  p {text-align: center;}
+  div {text-align: center;}
+ 
+</style>
+
+<style>
+  .oval {
+    height: 300px;
+    width: 800px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    margin: auto;
+    border: 5px solid #73ad2100;
+    padding: 10px;
+  }
+  </style>
    
    <body>
-    <div class="pure-g">
+    <div class="oval">
       <div class="pure-u-1-1">
         <h1>AFL Stats</h1>
-        <p>Compare the matchday variables and their effect on your team winning</p>
+        <p style="color:white;font-family:'URWAgendaW01-Bold';font-size: 30px;padding: 0px 80px;">Compare the matchday variables for all AFL games from 2012-2020 and analyse their effect on your team winning</p>
+      </div>
+
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-left">
+          <h2>Margin</h2>
+          <p>See the margin each round for your team and its correlation with the player height and age differential</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="Margin_Bars" class="vis-container"></div>
       </div>
     </div>
       
     <div class="pure-g">
-        <div class="pure-u-1-1">
+        <div class="pure-u-1-2">
           <div class="description description-left">
             <h2>Team Stackups</h2>
             <p>Compare how your team performs against the other teams in the competition</p>
           </div>
         </div>
-    </div>
-       
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-          <div id="Bubble" class="vis-container"></div>
-        </div>
-    </div>
-      
-    <div class="pure-g">
-        <div class="pure-u-1-1">
+
+        <div class="pure-u-1-2">
           <div class="description description-left">
             <h2>Venue Stackups</h2>
             <p>Compare how your team performs at particular grounds</p>
           </div>
         </div>
+
     </div>
        
     <div class="pure-g">
-        <div class="pure-u-1-1">
+        <div class="pure-u-1-2">
+          <div id="Bubble" class="vis-container"></div>
+        </div>
+
+        <div class="pure-u-1-2">
           <div id="HeatMap" class="vis-container"></div>
         </div>
     </div>
-      
       
     <div class="pure-g">
         <div class="pure-u-1-1">
@@ -64,29 +99,21 @@
           </div>
         </div>
     </div>
-      
+
     <div class="pure-g">
-        <div class="pure-u-1-1">
-        <div class="pure-u-3-6">
-          <div id="Map" class="vis-container"></div>
-        </div>
-        </div>
-    </div>
-      
-      
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-        <div class="pure-u-2-6">
-          <div id="ZoomMap" class="vis-container"></div>
-        </div>
-        </div>
-    </div>
+      <div class="pure-u-1-1">
+        <div id="MapComb" class="vis-container"></div>
+      </div>
+  </div>
 
-
-
-<div id="australia_map"></div>
 
 <script type="text/javascript">
+
+  var spec2 = "list_stats_AND_margin_bar_charts.vg.json";
+  vegaEmbed('#Margin_Bars', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
   var spec2 = "team_table_bubble.vg.json";
   vegaEmbed('#Bubble', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -96,13 +123,10 @@
   vegaEmbed('#HeatMap', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  var spec2 = "afl_venues.vg.json";
-  vegaEmbed('#Map', spec2).then(function(result) {
+  
+  var spec2 = "afl_venues_combined.vg.json";
+  vegaEmbed('#MapComb', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-   
-   var spec2 = "afl_venues_zoom.vg.json";
-  vegaEmbed('#ZoomMap', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+  
 </script>

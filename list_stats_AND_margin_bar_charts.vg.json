@@ -4,6 +4,7 @@
   "params": [
     {
       "name": "Year_filter",
+      "value": "Total",
       "bind": {
         "input": "select",
         "options": [
@@ -23,6 +24,7 @@
     },
     {
       "name": "Team_filter",
+      "value": "Richmond",
       "bind": {
         "input": "select",
         "options": [
@@ -56,19 +58,14 @@
   "data": {
     "url":"https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_list_stats_only.csv"
   },
+  
+  "config": {"background": "grey"},
   "columns": 2,
-  "spacing": 30,
+  "spacing": 100,
   "concat": [
     {
-      "width": 600,
-      "height": 200,
-      "title": {
-        "text":"Margin for AFL teams",
-        "subtitle": "Filter the the following charts by your team and which season you would like to analyse ",
-        "anchor": "start",
-        "offset": 20,
-        "dx": 50
-      },
+      "width": 550,
+      "height": 320,
       "mark": "bar",
       "encoding": {
         "x": {
@@ -78,7 +75,9 @@
             "domain": false,
             "ticks": false,
             "labelAngle": 0,
-            "labelPadding": 4
+            "labelPadding": 4,
+            "titleColor": "white",
+            "labelColor": "white"
           }
         },
         "y": {
@@ -87,14 +86,26 @@
             "gridColor": {
               "condition": {"test": "datum.value === 0", "value": "black"},
               "value": "#ddd"
-            }
+            },
+           "titleColor": "white",
+           "labelColor": "white"
           }
+        },
+        "color": {
+                "field": "Margin",
+                "type": "quantitative",
+                "scale": {
+                  "scheme": "blueorange",
+                  "domainMid": 0,
+                  "domainMax": 100,
+                  "domainMin": -100
+                }
         }
       }
     },
     {"vconcat": [
       {
-        "width": 600,
+        "width": 550,
         "height": 150,
         "mark": "bar",
         "encoding": {
@@ -105,7 +116,9 @@
               "domain": false,
               "ticks": false,
               "labelAngle": 0,
-              "labelPadding": 4
+              "labelPadding": 4,
+              "titleColor": "white",
+              "labelColor": "white"
             }
           },
           "y": {
@@ -114,13 +127,25 @@
               "gridColor": {
                 "condition": {"test": "datum.value === 0", "value": "black"},
                 "value": "#ddd"
-              }
+              },
+              "titleColor": "white",
+              "labelColor": "white"
             }
+          },
+          "color": {
+                "field": "Margin",
+                "type": "quantitative",
+                "scale": {
+                  "scheme": "blueorange",
+                  "domainMid": 0,
+                  "domainMax": 100,
+                  "domainMin": -100
+                }
           }
         }
       },
       {
-        "width": 600,
+        "width": 550,
         "height": 150,
         "mark": "bar",
         "encoding": {
@@ -131,7 +156,9 @@
               "domain": false,
               "ticks": false,
               "labelAngle": 0,
-              "labelPadding": 4
+              "labelPadding": 4,
+              "titleColor": "white",
+              "labelColor": "white"
             }
           },
           "y": {
@@ -140,8 +167,20 @@
               "gridColor": {
                 "condition": {"test": "datum.value === 0", "value": "black"},
                 "value": "#ddd"
-              }
+              },
+              "titleColor": "white",
+              "labelColor": "white"
             }
+          },
+          "color": {
+                "field": "Margin",
+                "type": "quantitative",
+                "scale": {
+                  "scheme": "blueorange",
+                  "domainMid": 0,
+                  "domainMax": 100,
+                  "domainMin": -100
+                }
           }
         }
       }
@@ -149,4 +188,3 @@
     }
   ]
 }
-
