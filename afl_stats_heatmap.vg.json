@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+      "url":"https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_actual_only.csv"
+  },
+     "params": [
+    {
+      "name": "Year_filter",
+      "value": "2020",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020"
+       ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Team_filter",
+      "select": {"type": "point", "fields": ["Team"]},
+      "bind": {
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+       ],
+        "name": "AFL Team:"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year == Year_filter"
+    },
+    {
+      "fold": ["G", "T", "D"]
+    }
+  ],
+  "config": {"background": "grey"},
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "key", 
+      "type": "nominal", 
+      "sort":"-x",
+      "title": "Statistics",
+      "axis": {
+               "titleColor": "white",
+               "labelColor": "white",
+               "titleFontSize": 15,
+               "labelAngle": 0
+              }
+    },
+    "y": {
+      "field": "Team", 
+      "type": "ordinal",
+      "axis": {
+              "titleColor": "white",
+              "labelColor": "white",
+              "titleFontSize": 15
+              }
+    },
+    "color": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {"scheme": "redyellowgreen", "reverse": true}
+    },
+    "opacity": {
+      "condition": {"param": "Team_filter", "value": 1},
+      "value": 0.3
+    },
+    "stroke": {
+      "condition": {"param": "Team_filter", "empty": false, "value": "black"},
+      "value": null
+    },
+    "tooltip": [
+      {"field": "D", "type": "nominal", "title": "Disposals"},
+      {"field": "G", "type": "nominal", "title": "Goals"},
+      {"field": "T", "type": "nominal", "title": "Tackles"}
+    ]
+  }
+}
