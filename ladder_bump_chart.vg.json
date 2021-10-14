@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart",
+  "data": {
+    "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_ladder_only.csv"
+  },
+  "width": 500,
+  "height": 400,
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal"},
+    "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
+    "order": {"field": "Team", "type": "quantitative"}
+  }
+}
