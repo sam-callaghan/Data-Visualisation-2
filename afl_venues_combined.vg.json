@@ -1,209 +1,208 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "params": [
-    {
-      "name": "AFL_team",
-      "value": "Richmond",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Adelaide",
-          "Brisbane Lions",
-          "Carlton",
-          "Collingwood",
-          "Essendon",
-          "Fremantle",
-          "Geelong",
-          "Gold Coast",
-          "Greater Western Sydney",
-          "Hawthorn",
-          "Melbourne",
-          "North Melbourne",
-          "Port Adelaide",
-          "Richmond",
-          "St Kilda",
-          "Sydney",
-          "West Coast",
-          "Western Bulldogs"
-        ],
-        "name": "AFL Team: "
-      }
-    },
-    {"name": "Home_param", "value": "Y"},
-    {
-      "name": "City_Zoom",
-      "value": ["Melbourne", [144.2, -37.6], 35000],
-      "bind": {
-        "input": "select",
-        "options": [
-          ["Melbourne", [144.2, -37.9], 35000], 
-          ["Adelaide", [138.1, -34.6], 40000], 
-          ["Brisbane", [152.6, -27],20000], 
-          ["Sydney",[151, -33.78],100000], 
-          ["Perth",[115.6, -31.8],50000]
-        ],
-        "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"]
-      }
-    }
-  ],
-  "config": {"background": "grey"},
-  "spacing": 100,
-  "hconcat": [
-    {
-      "width": 600,
-      "height": 500,
-      "projection": {
-        "type": "azimuthalEqualArea",
-        "scale": 880,
-        "rotate": [-115, 8.5, 10]
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "params": [
+      {
+        "name": "AFL_team",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Adelaide",
+            "Brisbane Lions",
+            "Carlton",
+            "Collingwood",
+            "Essendon",
+            "Fremantle",
+            "Geelong",
+            "Gold Coast",
+            "Greater Western Sydney",
+            "Hawthorn",
+            "Melbourne",
+            "North Melbourne",
+            "Port Adelaide",
+            "Richmond",
+            "St Kilda",
+            "Sydney",
+            "West Coast",
+            "Western Bulldogs"
+          ],
+          "name": "AFL Team: "
+        }
       },
-      "layer": [
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
-            "format": {"type": "topojson", "feature": "oceania.geo"}
-          },
-          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
+      {"name": "Home_param", "value": "Y"},
+      {
+        "name": "City_Zoom",
+        "value": "Melbourne",
+        "bind": {
+          "input": "select",
+          "options": [
+            ["Melbourne", [144.2, -37.9], 35000], 
+            ["Adelaide", [138.1, -34.6], 40000], 
+            ["Brisbane", [152.6, -27],20000], 
+            ["Sydney",[151, -33.78],100000], 
+            ["Perth",[115.6, -31.8],50000]
+          ],
+          "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"]
+        }
+      }
+    ],
+    "config": {"background": "grey"},
+    "spacing": 100,
+    "hconcat": [
+      {
+        "width": 600,
+        "height": 500,
+        "projection": {
+          "type": "azimuthalEqualArea",
+          "scale": 880,
+          "rotate": [-115, 8.5, 10]
         },
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
+        "layer": [
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
+              "format": {"type": "topojson", "feature": "oceania.geo"}
+            },
+            "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
           },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
-          "mark": {"type": "circle"},
-          "encoding": {
-            "longitude": {"field": "Longitude", "type": "quantitative"},
-            "latitude": {"field": "Latitude", "type": "quantitative"},
-            "size": {
-              "condition": {
-                "test": "datum['City Bin'] === City_Zoom[0]",
-                "value": 1200
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
+            },
+            "transform": [{"filter": "datum.Team == AFL_team"}],
+            "mark": {"type": "circle"},
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {
+                "condition": {
+                  "test": "datum['City Bin'] === City_Zoom[0]",
+                  "value": 1200
+                },
+                "value": 500
               },
-              "value": 500
-            },
-            "stroke": {
-              "condition": {
-                "test": "datum.Home === Home_param",
-                "value": "red"
+              "stroke": {
+                "condition": {
+                  "test": "datum.Home === Home_param",
+                  "value": "red"
+                },
+                "value": "black"
               },
-              "value": "black"
-            },
-            "strokeWidth": {
-              "condition": [
-                {"test": "datum.Home === Home_param", "value": 4},
-                {"test": "datum['City Bin'] === City_Zoom[0]", "value": 4}
-              ],
-              "value": 1
-            },
-            "opacity": {
-              "value": 1
-            },
-            "color": {
-              "field": "Margin Bin",
-              "type": "quantitative",
-              "scale": {
-                "scheme": "blueorange",
-                "domainMid": 0,
-                "domainMax": 100,
-                "domainMin": -100
-              }
-            },
-            "tooltip": [
-              {
+              "strokeWidth": {
+                "condition": [
+                  {"test": "datum.Home === Home_param", "value": 4},
+                  {"test": "datum['City Bin'] === City_Zoom[0]", "value": 4}
+                ],
+                "value": 1
+              },
+              "opacity": {
+                "value": 1
+              },
+              "color": {
                 "field": "Margin Bin",
                 "type": "quantitative",
-                "title": "Average Margin"
-              }
-            ]
-          }
-        },
-        {
-           "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
-          },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
-          "encoding": {
-            "longitude": {"field": "Longitude", "type": "quantitative"},
-            "latitude": {"field": "Latitude", "type": "quantitative"},
-            "text": {"field": "City Bin", "type": "nominal"}
-          },
-          "mark": {"type": "text", "align": "right", "dx": -10}
-        }
-      ]
-    },
-    {
-      "width": 540,
-      "height": 400,
-      "projection": {
-        "type": "equirectangular",
-        "center": {"expr": "City_Zoom[1]"},
-        "scale": {"expr": "City_Zoom[2]"}
-      },
-      "layer": [
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/australia_mapData.topojson",
-            "format": {"type": "topojson", "feature": "collection"}
-          },
-          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
-        },
-        {
-          "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
-          },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
-          "encoding": {
-            "longitude": {"field": "Longitude", "type": "quantitative"},
-            "latitude": {"field": "Latitude", "type": "quantitative"},
-            "size": {"value": 500, "type": "quantitative"},
-            "stroke": {
-              "condition": {
-                "test": "datum.Home === Home_param",
-                "value": "red"
+                "scale": {
+                  "scheme": "blueorange",
+                  "domainMid": 0,
+                  "domainMax": 100,
+                  "domainMin": -100
+                }
               },
-              "value": "black"
+              "tooltip": [
+                {
+                  "field": "Margin Bin",
+                  "type": "quantitative",
+                  "title": "Average Margin"
+                }
+              ]
+            }
+          },
+          {
+             "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
             },
-            "strokeWidth": {
-              "condition": {"test": "datum.Home === Home_param", "value": 3},
-              "value": 1
+            "transform": [{"filter": "datum.Team == AFL_team"}],
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "text": {"field": "City Bin", "type": "nominal"}
             },
-            "opacity": {
-              "value": 1
+            "mark": {"type": "text", "align": "right", "dx": -10}
+          }
+        ]
+      },
+      {
+        "width": 540,
+        "height": 400,
+        "projection": {
+          "type": "equirectangular",
+          "center": {"expr": "City_Zoom[1]"},
+          "scale": {"expr": "City_Zoom[2]"}
+        },
+        "layer": [
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/australia_mapData.topojson",
+              "format": {"type": "topojson", "feature": "collection"}
             },
-            "color": {
-              "field": "Margin",
-              "type": "quantitative",
-              "scale": {
-                "scheme": "blueorange",
-                "domainMid": 0,
-                "domainMax": 100,
-                "domainMin": -100
-              }
+            "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
             },
-            "tooltip": [
-              {"field": "Venue (Alternative)", "type": "nominal", "title": "Venue (2nd Name)"},
-              {
+            "transform": [{"filter": "datum.Team == AFL_team"}],
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {"value": 500, "type": "quantitative"},
+              "stroke": {
+                "condition": {
+                  "test": "datum.Home === Home_param",
+                  "value": "red"
+                },
+                "value": "black"
+              },
+              "strokeWidth": {
+                "condition": {"test": "datum.Home === Home_param", "value": 3},
+                "value": 1
+              },
+              "opacity": {
+                "value": 1
+              },
+              "color": {
                 "field": "Margin",
                 "type": "quantitative",
-                "title": "Average Margin"
-              }
-            ]
+                "scale": {
+                  "scheme": "blueorange",
+                  "domainMid": 0,
+                  "domainMax": 100,
+                  "domainMin": -100
+                }
+              },
+              "tooltip": [
+                {"field": "Venue (Alternative)", "type": "nominal", "title": "Venue (2nd Name)"},
+                {
+                  "field": "Margin",
+                  "type": "quantitative",
+                  "title": "Average Margin"
+                }
+              ]
+            },
+            "mark": {"type": "circle"}
           },
-          "mark": {"type": "circle"}
-        },
-        {
-           "data": {
-            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
-          },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
-          "encoding": {
-            "longitude": {"field": "Longitude", "type": "quantitative"},
-            "latitude": {"field": "Latitude", "type": "quantitative"},
-            "text": {"field": "Venue", "type": "nominal"}
-          },
-          "mark": {"type": "text", "align": "right", "dx": -10}
-        }
-      ]
-    }
-  ]
-}
+          {
+             "data": {
+              "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
+            },
+            "transform": [{"filter": "datum.Team == AFL_team"}],
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "text": {"field": "Venue", "type": "nominal"}
+            },
+            "mark": {"type": "text", "align": "right", "dx": -10}
+          }
+        ]
+      }
+    ]
+  }
