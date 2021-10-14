@@ -4,12 +4,93 @@
   "data": {
     "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_ladder_only.csv"
   },
-  "width": 500,
-  "height": 400,
-  "mark": {"type": "line", "point": true},
-  "encoding": {
-    "x": {"field": "Year", "type": "temporal"},
-    "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
-    "order": {"field": "Team", "type": "quantitative"}
-  }
+  "width": 700,
+  "height": 500,
+  "config": {"background": "grey"},
+  "layer":[
+    {
+      "params": [{
+          "name": "Filter",
+          "select": {"type": "point", "fields": ["Team"]},
+          "value": ["Richmond","Melbourne","Brisbane Lions"],
+          "bind": "legend"
+      }],
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal", "scale":{"domainMin":"2011", "domainMax": "2021"}},
+        "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
+        "order": {"field": "Team", "type": "nominal"},
+        "color": {
+          "field": "Team",
+          "scale":{"domain": [            
+                "Adelaide",
+                "Brisbane Lions",
+                "Carlton",
+                "Collingwood",
+                "Essendon",
+                "Fremantle",
+                "Geelong",
+                "Gold Coast",
+                "Greater Western Sydney",
+                "Hawthorn",
+                "Melbourne",
+                "North Melbourne",
+                "Port Adelaide",
+                "Richmond",
+                "St Kilda",
+                "Sydney",
+                "West Coast",
+                "Western Bulldogs"],
+                "range":["green", "maroon", "navy", "lightgrey", "lime", "purple", "white", "aqua", "orange", "deepskyblue", "red", "indigo", "black", "yellow", "pink", "coral", "deeppink", "blue"]}
+          },
+        "opacity": {
+          "condition": {"param": "Filter", "value": 1},
+          "value": 0.2
+        },
+        "size": {
+          "condition": {"param": "Filter", "value": 4},
+          "value": 1
+        }
+        }
+    },
+    {
+      "mark": {"type": "circle"},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
+        "color": {
+          "field": "Team",
+          "scale":{"domain": [            
+                "Adelaide",
+                "Brisbane Lions",
+                "Carlton",
+                "Collingwood",
+                "Essendon",
+                "Fremantle",
+                "Geelong",
+                "Gold Coast",
+                "Greater Western Sydney",
+                "Hawthorn",
+                "Melbourne",
+                "North Melbourne",
+                "Port Adelaide",
+                "Richmond",
+                "St Kilda",
+                "Sydney",
+                "West Coast",
+                "Western Bulldogs"],
+                "range":["green", "maroon", "navy", "lightgrey", "lime", "purple", "white", "aqua", "orange", "deepskyblue", "red", "indigo", "black", "yellow", "pink", "coral", "deeppink", "blue"]}
+          },
+        "opacity": {
+          "condition": {"param": "Filter", "value": 1},
+          "value": 0.2
+        },
+        "size": {
+          "condition": {"param": "Filter", "value": 150}
+        },
+        "stroke": {"value": "black"}
+      }
+
+    }
+  ]
 }
