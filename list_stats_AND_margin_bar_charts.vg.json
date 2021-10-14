@@ -97,10 +97,17 @@
                 "scale": {
                   "scheme": "blueorange",
                   "domainMid": 0,
-                  "domainMax": 100,
-                  "domainMin": -100
+                  "domainMax": 150,
+                  "domainMin": -150
                 }
-        }
+        },
+        "stroke": {
+          "value": "black"
+        },
+        "tooltip":[ 
+          {"field": "Margin", "type": "nominal", "title": "Margin"},
+          {"field": "Team 2", "type": "nominal", "title": "Opposition"}
+      ]
       }
     },
     {"vconcat": [
@@ -129,7 +136,8 @@
                 "value": "#ddd"
               },
               "titleColor": "white",
-              "labelColor": "white"
+              "labelColor": "white",
+              "title": "Height Differential (cm)"
             }
           },
           "color": {
@@ -138,10 +146,17 @@
                 "scale": {
                   "scheme": "blueorange",
                   "domainMid": 0,
-                  "domainMax": 100,
-                  "domainMin": -100
+                  "domainMax": 150,
+                  "domainMin": -150
                 }
-          }
+          },
+          "stroke": {
+            "value": "black"
+          },
+          "tooltip":[ 
+            {"field": "Margin", "type": "nominal", "title": "Margin"},
+            {"field": "Team 2", "type": "nominal", "title": "Opposition"}
+        ]
         }
       },
       {
@@ -169,7 +184,8 @@
                 "value": "#ddd"
               },
               "titleColor": "white",
-              "labelColor": "white"
+              "labelColor": "white",
+              "title": "Age Differential (years)"
             }
           },
           "color": {
@@ -178,10 +194,17 @@
                 "scale": {
                   "scheme": "blueorange",
                   "domainMid": 0,
-                  "domainMax": 100,
-                  "domainMin": -100
+                  "domainMax": 150,
+                  "domainMin": -150
                 }
-          }
+          },
+          "stroke": {
+            "value": "black"
+          },
+          "tooltip":[ 
+            {"field": "Margin", "type": "nominal", "title": "Margin"},
+            {"field": "Team 2", "type": "nominal", "title": "Opposition"}
+        ]
         }
       }
     ]

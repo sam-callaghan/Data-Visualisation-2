@@ -89,7 +89,7 @@
     "color": {"aggregate": "mean", 
               "field": "Margin", 
               "scale":{"scheme":"blueorange", "domainMid": 0}},
-              "legend": {
+    "legend": {
                 "titleColor": "white",
                 "labelColor": "white"
               },
