@@ -13,7 +13,7 @@
   "layer":[
     {
       "params": [{
-          "name": "Filter",
+          "name": "Team_Filter",
           "select": {"type": "point", "fields": ["Team"]},
           "value": ["Richmond","Hawthorn", "Western Bulldogs"],
           "bind": "legend"
@@ -74,18 +74,24 @@
                   }
           },
         "opacity": {
-          "condition": {"param": "Filter", "value": 1},
+          "condition": {"param": "Team_Filter", "value": 1},
           "value": 0.2
         },
         "size": {
           "value": 1,
-          "condition": {"param": "Filter", "value": 4}
+          "condition": {"param": "Team_Filter", "value": 4}
     
         }
         }
     },
     {
       "mark": {"type": "circle"},
+      "params": [
+        {
+          "name": "Year_Select",
+          "select": {"type": "point", "encodings": ["x"]}
+        }
+      ],
       "encoding": {
         "x": {"field": "Year", "type": "temporal"},
         "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
@@ -113,13 +119,16 @@
                 "range":["green", "maroon", "navy", "lightgrey", "lime", "purple", "white", "aqua", "orange", "deepskyblue", "red", "indigo", "black", "yellow", "pink", "coral", "deeppink", "blue"]}
           },
         "opacity": {
-          "condition": {"param": "Filter", "value": 1},
+          "condition":[
+            {"param": "Year_Select","value": 1},
+            {"param": "Team_Filter","value": 1}
+          ],
           "value": 0.2
         },
         "size": {
           "condition":[
             {"test": "datum.Premier === Premier_param", "value": 500},
-            {"param": "Filter", "value": 150}
+            {"param": "Team_Filter", "value": 200}
              
           ]
         },
@@ -129,4 +138,3 @@
     }
   ]
 }
-
