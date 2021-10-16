@@ -6,8 +6,8 @@
   "params": [
     {
       "name": "Year_filter",
+      "value": "2020",
       "bind": {
-        "value": "2012",
         "input": "select",
         "options": [
           "2012",
@@ -21,25 +21,13 @@
           "2020",
           "Total"
        ],
-        "labels":[
-          "2012",
-          "2013",
-          "2014",
-          "2015",
-          "2016",
-          "2017",
-          "2018",
-          "2019",
-          "2020",
-          "Total"
-        ],
         "name": "Year: "
       }
     },
     {
       "name": "Team_filter",
+      "value" : "Richmond",
       "bind": {
-        "value" : "Adelaide",
         "input": "select",
         "options": [
           "Adelaide",
@@ -61,26 +49,6 @@
           "West Coast",
           "Western Bulldogs"
        ],
-        "labels":[
-          "Adelaide",
-          "Brisbane Lions",
-          "Carlton",
-          "Collingwood",
-          "Essendon",
-          "Fremantle",
-          "Geelong",
-          "Gold Coast",
-          "Greater Western Sydney",
-          "Hawthorn",
-          "Melbourne",
-          "North Melbourne",
-          "Port Adelaide",
-          "Richmond",
-          "St Kilda",
-          "Sydney",
-          "West Coast",
-          "Western Bulldogs"
-        ],
         "name": "AFL Team: "
       }
     }
@@ -92,6 +60,9 @@
       {"filter": "datum.Year == Year_filter"},
       {"filter": "datum.Team == Team_filter"}
   ],
+  "config": {
+    "background": "grey"
+  },
   "encoding": {
     "y": {
       "field": "Rainfall",
@@ -99,6 +70,8 @@
       "sort": ["None", "Low", "Medium", "High"],
 
       "axis": {
+        "titleColor": "white",
+        "labelColor": "white",
         "domain": false,
         "ticks": false,
         "labelAngle": 0,
@@ -110,16 +83,22 @@
       "type": "quantitative",
       "scale": {"padding": 20},
       "axis": {
-        "gridColor": {
-          "condition": {"test": "datum.value === 0", "value": "black"},
-          "value": "#ddd"
-        }
+          "titleColor": "white",
+          "labelColor": "white",
+          "gridColor": {
+            "condition": {"test": "datum.value === 0", "value": "black"},
+            "value": "#ddd"
+          }
       }
     },
     "color":{
           "field": "Margin",
           "type":"quantitative",
-          "scale":{"scheme":"blueorange"}
+          "scale":{"scheme":"redyellowgreen", "domainMid": 0},
+          "legend": {
+            "titleColor": "white",
+            "labelColor": "white"
+          }
         }
   },
   "layer": [
@@ -130,7 +109,10 @@
         "align": {"expr": "datum.Margin < 0 ? 'right' : 'left'"},
         "dx": {"expr": "datum.Margin < 0 ? -2 : 2"}
       },
-      "encoding": {"text": {"field": "Margin", "type": "quantitative"}}
+      "encoding": {
+        "text": {"field": "Margin", "type": "quantitative"},
+        "color": {"value": "white"}
+      }
     }
   ]
 }

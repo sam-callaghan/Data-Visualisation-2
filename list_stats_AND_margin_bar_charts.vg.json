@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "params": [
     {
       "name": "Year_filter",
@@ -16,9 +15,8 @@
           "2017",
           "2018",
           "2019",
-          "2020",
-          "Total"
-       ],
+          "2020"
+        ],
         "name": "Year: "
       }
     },
@@ -46,31 +44,58 @@
           "Sydney",
           "West Coast",
           "Western Bulldogs"
-       ],
+        ],
         "name": "AFL Team: "
       }
     }
   ],
   "transform": [
-      {"filter": "datum.Year == Year_filter"},
-      {"filter":"datum.Team == Team_filter"}
+    {"filter": "datum.Year == Year_filter"},
+    {"filter": "datum.Team == Team_filter"}
   ],
   "data": {
-    "url":"https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_list_stats_only.csv"
+    "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_list_stats_only.csv"
   },
-  
   "config": {"background": "grey"},
-  "columns": 2,
-  "spacing": 100,
-  "concat": [
+  "vconcat": [
     {
-      "width": 550,
+      "width": 600,
       "height": 320,
       "mark": "bar",
       "encoding": {
         "x": {
-          "field": "Round", "type": "nominal", 
-          "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
+          "field": "Round",
+          "type": "nominal",
+          "sort": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R11",
+            "R12",
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R18",
+            "R19",
+            "R20",
+            "R21",
+            "R22",
+            "R23",
+            "EF",
+            "QF",
+            "PF",
+            "SF",
+            "GF"
+          ],
           "axis": {
             "domain": false,
             "ticks": false,
@@ -81,133 +106,187 @@
           }
         },
         "y": {
-          "field": "Margin", "type": "quantitative",
+          "field": "Margin",
+          "type": "quantitative",
           "axis": {
             "gridColor": {
               "condition": {"test": "datum.value === 0", "value": "black"},
               "value": "#ddd"
             },
-           "titleColor": "white",
-           "labelColor": "white"
+            "titleColor": "white",
+            "labelColor": "white"
           }
         },
         "color": {
-                "field": "Margin",
-                "type": "quantitative",
-                "scale": {
-                  "scheme": "redyellowgreen",
-                  "domainMid": 0,
-                  "domainMax": 150,
-                  "domainMin": -150
-                }
+          "field": "Margin",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "redyellowgreen",
+            "domainMid": 0,
+            "domainMax": 150,
+            "domainMin": -150
+          }
         },
-        "stroke": {
-          "value": "black"
-        },
-        "tooltip":[ 
+        "stroke": {"value": "black"},
+        "tooltip": [
           {"field": "Margin", "type": "nominal", "title": "Margin"},
           {"field": "Team 2", "type": "nominal", "title": "Opposition"}
-      ]
+        ]
       }
     },
-    {"vconcat": [
-      {
-        "width": 550,
-        "height": 150,
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Round", "type": "nominal", 
-            "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
-            "axis": {
-              "domain": false,
-              "ticks": false,
-              "labelAngle": 0,
-              "labelPadding": 4,
-              "titleColor": "white",
-              "labelColor": "white"
-            }
-          },
-          "y": {
-            "field": "Height Differential", "type": "quantitative",
-            "axis": {
-              "gridColor": {
-                "condition": {"test": "datum.value === 0", "value": "black"},
-                "value": "#ddd"
-              },
-              "titleColor": "white",
-              "labelColor": "white",
-              "title": "Height Differential (cm)"
-            }
-          },
-          "color": {
-                "field": "Margin",
-                "type": "quantitative",
-                "scale": {
-                  "scheme": "blueorange",
-                  "domainMid": 0,
-                  "domainMax": 150,
-                  "domainMin": -150
-                }
-          },
-          "stroke": {
-            "value": "black"
-          },
-          "tooltip":[ 
-            {"field": "Margin", "type": "nominal", "title": "Margin"},
-            {"field": "Team 2", "type": "nominal", "title": "Opposition"}
-        ]
+        {
+          "width": 600,
+          "height": 150,
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "Round",
+              "type": "nominal",
+              "sort": [
+                "R1",
+                "R2",
+                "R3",
+                "R4",
+                "R5",
+                "R6",
+                "R7",
+                "R8",
+                "R9",
+                "R10",
+                "R11",
+                "R12",
+                "R13",
+                "R14",
+                "R15",
+                "R16",
+                "R17",
+                "R18",
+                "R19",
+                "R20",
+                "R21",
+                "R22",
+                "R23",
+                "EF",
+                "QF",
+                "PF",
+                "SF",
+                "GF"
+              ],
+              "axis": {
+                "domain": false,
+                "ticks": false,
+                "labelAngle": 0,
+                "labelPadding": 4,
+                "titleColor": "white",
+                "labelColor": "white"
+              }
+            },
+            "y": {
+              "field": "Height Differential",
+              "type": "quantitative",
+              "axis": {
+                "gridColor": {
+                  "condition": {"test": "datum.value === 0", "value": "black"},
+                  "value": "#ddd"
+                },
+                "titleColor": "white",
+                "labelColor": "white",
+                "title": "Height Differential (cm)"
+              }
+            },
+            "color": {
+              "field": "Margin",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "blueorange",
+                "domainMid": 0,
+                "domainMax": 150,
+                "domainMin": -150
+              }
+            },
+            "stroke": {"value": "black"},
+            "tooltip": [
+              {"field": "Margin", "type": "nominal", "title": "Margin"},
+              {"field": "Team 2", "type": "nominal", "title": "Opposition"}
+            ]
+          }
+        },
+        {
+          "width": 600,
+          "height": 150,
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "Round",
+              "type": "nominal",
+              "sort": [
+                "R1",
+                "R2",
+                "R3",
+                "R4",
+                "R5",
+                "R6",
+                "R7",
+                "R8",
+                "R9",
+                "R10",
+                "R11",
+                "R12",
+                "R13",
+                "R14",
+                "R15",
+                "R16",
+                "R17",
+                "R18",
+                "R19",
+                "R20",
+                "R21",
+                "R22",
+                "R23",
+                "EF",
+                "QF",
+                "PF",
+                "SF",
+                "GF"
+              ],
+              "axis": {
+                "domain": false,
+                "ticks": false,
+                "labelAngle": 0,
+                "labelPadding": 4,
+                "titleColor": "white",
+                "labelColor": "white"
+              }
+            },
+            "y": {
+              "field": "Age Differential",
+              "type": "quantitative",
+              "axis": {
+                "gridColor": {
+                  "condition": {"test": "datum.value === 0", "value": "black"},
+                  "value": "#ddd"
+                },
+                "titleColor": "white",
+                "labelColor": "white",
+                "title": "Age Differential (years)"
+              }
+            },
+            "color": {
+              "field": "Margin",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "blueorange",
+                "domainMid": 0,
+                "domainMax": 150,
+                "domainMin": -150
+              }
+            },
+            "stroke": {"value": "black"},
+            "tooltip": [
+              {"field": "Margin", "type": "nominal", "title": "Margin"},
+              {"field": "Team 2", "type": "nominal", "title": "Opposition"}
+            ]
+          }
         }
-      },
-      {
-        "width": 550,
-        "height": 150,
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Round", "type": "nominal", 
-            "sort": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14","R15", "R16", "R17", "R18", "R19","R20", "R21", "R22", "R23", "EF","QF","PF", "SF", "GF"],
-            "axis": {
-              "domain": false,
-              "ticks": false,
-              "labelAngle": 0,
-              "labelPadding": 4,
-              "titleColor": "white",
-              "labelColor": "white"
-            }
-          },
-          "y": {
-            "field": "Age Differential", "type": "quantitative",
-            "axis": {
-              "gridColor": {
-                "condition": {"test": "datum.value === 0", "value": "black"},
-                "value": "#ddd"
-              },
-              "titleColor": "white",
-              "labelColor": "white",
-              "title": "Age Differential (years)"
-            }
-          },
-          "color": {
-                "field": "Margin",
-                "type": "quantitative",
-                "scale": {
-                  "scheme": "blueorange",
-                  "domainMid": 0,
-                  "domainMax": 150,
-                  "domainMin": -150
-                }
-          },
-          "stroke": {
-            "value": "black"
-          },
-          "tooltip":[ 
-            {"field": "Margin", "type": "nominal", "title": "Margin"},
-            {"field": "Team 2", "type": "nominal", "title": "Opposition"}
-        ]
-        }
-      }
-    ]
-    }
   ]
 }
