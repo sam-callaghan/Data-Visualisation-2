@@ -24,7 +24,7 @@
     },
     {
       "name": "Team_filter",
-      "select": {"type": "point", "fields": ["Team"]},
+      "select": {"type": "point", "fields": ["Team 1"]},
       "bind": {
         "input": "select",
         "options": [
@@ -86,27 +86,36 @@
   "height": 500,
   "encoding": {
     "y": {
-      "field": "Team",
+      "field": "Team 1 Label",
       "type": "nominal",
       "axis": {
         "titleColor": "white",
-        "labelColor": "white"
+        "title": "Team 1",
+        "labelColor": "white",
+        "titleFontSize": 18,
+        "titlePadding": 20
       }
     },
     "x": {
-      "field": "Team 2",
+      "field": "Team 2 Label",
       "type": "nominal",
       "axis": {
         "titleColor": "white",
-        "labelColor": "white"
+        "title": "Team 2",
+        "labelColor": "white",
+        "labelAngle": 0,
+        "titleFontSize": 18,
+        "titlePadding": 20
       }
     },
     "color": {"aggregate": "mean", 
               "field": "Margin", 
               "scale":{"scheme":"redyellowgreen", "domainMid": 0},
               "legend": {
+                "title": "Margin",
                 "titleColor": "white",
-                "labelColor": "white"
+                "labelColor": "white",
+                "titleFontSize": 18
               }
               },
 
@@ -118,7 +127,11 @@
                 },
               "value": null
               },
-    "tooltip":[ {"field": "Margin", "type": "nominal", "title": "Margin"}],
+    "tooltip":[ 
+      {"field": "Margin", "type": "quantitative", "title": "Margin"},
+      {"field": "Team 1", "type": "nominal", "title": "Team 1"},
+      {"field": "Team 2", "type": "nominal", "title": "Team 2"}
+    ],
     "strokeWidth":{
       "condition": {
         "param": "Team_filter", "value": 1}

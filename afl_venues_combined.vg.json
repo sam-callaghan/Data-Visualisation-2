@@ -46,7 +46,7 @@
       }
     }
   ],
-  "config": {"background": "grey"},
+  "config": {"background": "darkgrey"},
   "spacing": 100,
   "hconcat": [
     {
@@ -63,7 +63,7 @@
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
             "format": {"type": "topojson", "feature": "oceania.geo"}
           },
-          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
+          "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "darkgray"}
         },
         {
           "data": {
@@ -84,7 +84,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "blue"
+                "value": "magenta"
               },
               "value": "black"
             },
@@ -93,7 +93,7 @@
                 {"test": "datum.Home === Home_param", "value": 4},
                 {"test": "datum['City Bin'] === City_Zoom[0]", "value": 4}
               ],
-              "value": 1
+              "value": 2
             },
             "opacity": {
               "value": 1
@@ -145,7 +145,7 @@
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/australia_mapData.topojson",
             "format": {"type": "topojson", "feature": "collection"}
           },
-          "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "darkgray"}
+          "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "darkgray"}
         },
         {
           "data": {
@@ -159,13 +159,13 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "blue"
+                "value": "magenta"
               },
               "value": "black"
             },
             "strokeWidth": {
-              "condition": {"test": "datum.Home === Home_param", "value": 3},
-              "value": 1
+              "condition": {"test": "datum.Home === Home_param", "value": 3.5},
+              "value": 2
             },
             "opacity": {
               "value": 1
@@ -178,15 +178,20 @@
                 "domainMid": 0,
                 "domainMax": 100,
                 "domainMin": -100
+              },
+              "legend": {
+                "title": "Margin",
+                "titleColor": "white",
+                "labelColor": "white",
+                "titleFontSize": 18
               }
             },
             "tooltip": [
+              {"field": "Margin", "type": "quantitative","title": "Average Margin"},
               {"field": "Venue (Alternative)", "type": "nominal", "title": "Venue (2nd Name)"},
-              {
-                "field": "Margin",
-                "type": "quantitative",
-                "title": "Average Margin"
-              }
+              {"field": "Length", "type": "quantitative","title": "Length"},
+              {"field": "Width ", "type": "quantitative","title": "Width"},
+              {"field": "Capacity", "type": "quantitative","title": "Capacity"}
             ]
           },
           "mark": {"type": "circle"}
@@ -201,7 +206,7 @@
             "latitude": {"field": "Latitude", "type": "quantitative"},
             "text": {"field": "Venue", "type": "nominal"}
           },
-          "mark": {"type": "text", "align": "right", "dx": -20}
+          "mark": {"type": "text", "align": "left", "dx": 20, "fontSize": 12}
         }
       ]
     }

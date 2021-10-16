@@ -102,7 +102,9 @@
             "labelAngle": 0,
             "labelPadding": 4,
             "titleColor": "white",
-            "labelColor": "white"
+            "labelColor": "white",
+            "titleFontSize": 18,
+            "titlePadding": 20
           }
         },
         "y": {
@@ -114,7 +116,9 @@
               "value": "#ddd"
             },
             "titleColor": "white",
-            "labelColor": "white"
+            "labelColor": "white",
+            "titleFontSize": 18,
+            "titlePadding": 20
           }
         },
         "color": {
@@ -125,6 +129,12 @@
             "domainMid": 0,
             "domainMax": 150,
             "domainMin": -150
+          },
+          "legend": {
+            "title": "Margin",
+            "titleColor": "white",
+            "labelColor": "white",
+            "titleFontSize": 18
           }
         },
         "stroke": {"value": "black"},
@@ -178,7 +188,9 @@
                 "labelAngle": 0,
                 "labelPadding": 4,
                 "titleColor": "white",
-                "labelColor": "white"
+                "labelColor": "white",
+                "titleFontSize": 18,
+                "titlePadding": 20
               }
             },
             "y": {
@@ -191,7 +203,9 @@
                 },
                 "titleColor": "white",
                 "labelColor": "white",
-                "title": "Height Differential (cm)"
+                "title": "Height Differential (cm)",
+                "titleFontSize": 18,
+                "titlePadding": 20
               }
             },
             "color": {
@@ -255,7 +269,9 @@
                 "labelAngle": 0,
                 "labelPadding": 4,
                 "titleColor": "white",
-                "labelColor": "white"
+                "labelColor": "white",
+                "titleFontSize": 18,
+                "titlePadding": 20
               }
             },
             "y": {
@@ -268,7 +284,9 @@
                 },
                 "titleColor": "white",
                 "labelColor": "white",
-                "title": "Age Differential (years)"
+                "title": "Age Differential (years)",
+                "titleFontSize": 18,
+                "titlePadding": 20
               }
             },
             "color": {

@@ -99,7 +99,8 @@
             "titleColor": "white",
             "labelColor": "white"
           }
-        }
+        },
+     "stroke": {"value": "black"}
   },
   "layer": [
     {"mark": "bar"},
