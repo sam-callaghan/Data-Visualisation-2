@@ -3,7 +3,7 @@
   "params": [
     {
       "name": "AFL_team",
-      "value": "Richmond",
+      "value": "Geelong",
       "bind": {
         "input": "select",
         "options": [
@@ -36,7 +36,7 @@
       "bind": {
         "input": "select",
         "options": [
-          ["Melbourne", [144.2, -37.9], 35000], 
+          ["Melbourne", [144.2, -37.6], 35000], 
           ["Adelaide", [138.1, -34.6], 40000], 
           ["Brisbane", [152.6, -27],20000], 
           ["Sydney",[151, -33.78],100000], 

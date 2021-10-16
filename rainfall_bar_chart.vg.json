@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
-  "width": 400,
+  "width": 550,
  "height": 200,
   "params": [
     {
       "name": "Year_filter",
-      "value": "2020",
+      "value": "2017",
       "bind": {
         "input": "select",
         "options": [
