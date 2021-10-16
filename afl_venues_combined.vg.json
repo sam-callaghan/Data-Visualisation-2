@@ -84,7 +84,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "red"
+                "value": "blue"
               },
               "value": "black"
             },
@@ -102,7 +102,7 @@
               "field": "Margin Bin",
               "type": "quantitative",
               "scale": {
-                "scheme": "blueorange",
+                "scheme": "redyellowgreen",
                 "domainMid": 0,
                 "domainMax": 100,
                 "domainMin": -100
@@ -127,7 +127,7 @@
             "latitude": {"field": "Latitude", "type": "quantitative"},
             "text": {"field": "City Bin", "type": "nominal"}
           },
-          "mark": {"type": "text", "align": "right", "dx": -10}
+          "mark": {"type": "text", "align": "right", "dx": -20}
         }
       ]
     },
@@ -159,7 +159,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "red"
+                "value": "blue"
               },
               "value": "black"
             },
@@ -174,7 +174,7 @@
               "field": "Margin",
               "type": "quantitative",
               "scale": {
-                "scheme": "blueorange",
+                "scheme": "redyellowgreen",
                 "domainMid": 0,
                 "domainMax": 100,
                 "domainMin": -100
@@ -201,7 +201,7 @@
             "latitude": {"field": "Latitude", "type": "quantitative"},
             "text": {"field": "Venue", "type": "nominal"}
           },
-          "mark": {"type": "text", "align": "right", "dx": -10}
+          "mark": {"type": "text", "align": "right", "dx": -20}
         }
       ]
     }

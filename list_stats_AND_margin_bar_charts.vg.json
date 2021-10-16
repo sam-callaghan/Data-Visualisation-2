@@ -4,7 +4,7 @@
   "params": [
     {
       "name": "Year_filter",
-      "value": "Total",
+      "value": "2020",
       "bind": {
         "input": "select",
         "options": [
@@ -95,7 +95,7 @@
                 "field": "Margin",
                 "type": "quantitative",
                 "scale": {
-                  "scheme": "blueorange",
+                  "scheme": "redyellowgreen",
                   "domainMid": 0,
                   "domainMax": 150,
                   "domainMin": -150

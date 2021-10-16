@@ -6,8 +6,8 @@
   "params": [
     {
       "name": "Year_filter",
+      "value": "2020",
       "bind": {
-        "value": "2012",
         "input": "select",
         "options": [
           "2012",
@@ -21,25 +21,13 @@
           "2020",
           "Total"
        ],
-        "labels":[
-          "2012",
-          "2013",
-          "2014",
-          "2015",
-          "2016",
-          "2017",
-          "2018",
-          "2019",
-          "2020",
-          "Total"
-        ],
         "name": "Year: "
       }
     },
     {
       "name": "Team_filter",
+      "value" : "Richmond",
       "bind": {
-        "value" : "Adelaide",
         "input": "select",
         "options": [
           "Adelaide",
@@ -61,26 +49,7 @@
           "West Coast",
           "Western Bulldogs"
        ],
-        "labels":[
-          "Adelaide",
-          "Brisbane Lions",
-          "Carlton",
-          "Collingwood",
-          "Essendon",
-          "Fremantle",
-          "Geelong",
-          "Gold Coast",
-          "Greater Western Sydney",
-          "Hawthorn",
-          "Melbourne",
-          "North Melbourne",
-          "Port Adelaide",
-          "Richmond",
-          "St Kilda",
-          "Sydney",
-          "West Coast",
-          "Western Bulldogs"
-        ],
+
         "name": "AFL Team: "
       }
     }
@@ -125,7 +94,7 @@
     "color":{
           "field": "Margin",
           "type":"quantitative",
-          "scale":{"scheme":"blueorange"}
+          "scale":{"scheme":"redyellowgreen"}
         }
   }
 }

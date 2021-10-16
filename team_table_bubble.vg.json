@@ -59,7 +59,7 @@
   "config": {
     "background": "grey"
   },
-  "mark": "circle",
+  "mark": "rect",
   "encoding": {
     "y": {
       "field": "Team",
@@ -77,22 +77,15 @@
         "labelColor": "white"
       }
     },
-    "size": {
-      "field": "Margin_abs",
-      "type": "quantitative",
-      "legend": {
-            "titleColor": "white",
-            "labelColor": "white",
-            "symbolFillColor": "white"
-              }
-    },
     "color": {"aggregate": "mean", 
               "field": "Margin", 
-              "scale":{"scheme":"blueorange", "domainMid": 0}},
-    "legend": {
+              "scale":{"scheme":"redyellowgreen", "domainMid": 0},
+              "legend": {
                 "titleColor": "white",
                 "labelColor": "white"
+              }
               },
+
     "stroke": {
                 "condition": {
                   "param": "Team_filter",
