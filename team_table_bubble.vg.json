@@ -4,7 +4,7 @@
 "params": [
     {
       "name": "Year_filter",
-      "value": "Total",
+      "value": "2017",
       "bind": {
         "input": "select",
         "options": [
@@ -45,8 +45,30 @@
           "St Kilda",
           "Sydney",
           "West Coast",
-          "Western Bulldogs"
+          "Western Bulldogs",
+          null
        ],
+       "labels": [
+        "Adelaide",
+        "Brisbane Lions",
+        "Carlton",
+        "Collingwood",
+        "Essendon",
+        "Fremantle",
+        "Geelong",
+        "Gold Coast",
+        "Greater Western Sydney",
+        "Hawthorn",
+        "Melbourne",
+        "North Melbourne",
+        "Port Adelaide",
+        "Richmond",
+        "St Kilda",
+        "Sydney",
+        "West Coast",
+        "Western Bulldogs",
+        "None"
+     ],
         "name": "AFL Team: "
       }
     }
