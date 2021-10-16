@@ -50,14 +50,41 @@
        ],
         "name": "AFL Team:"
       }
-    }
+    },
+    {
+      "name": "Stats_filter",
+      "value": ["G", "D", "M"],
+      "bind": {
+        "input": "select",
+
+        "options": [
+          ["G", "D", "M"],
+          ["D", "CP", "UP"],
+          ["G", "I50", "B"],
+          ["T", "1%", "T50"]
+       ],
+       "labels": [
+         "General",
+         "Disposals",
+         "Offensive",
+         "Defensive"
+       ],
+        "name": "Stats:"
+      }
+    },
+    {
+          "name": "Premier_param", "value": "Y"
+     }
   ],
   "transform": [
     {
       "filter": "datum.Year == Year_filter"
     },
     {
-      "fold": ["G", "T", "D"]
+      "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
+    },
+    {
+      "calculate":"parseInt(datum.Position)", "as": "Position"
     }
   ],
   "config": {"background": "grey"},
@@ -66,7 +93,6 @@
     "x": {
       "field": "key", 
       "type": "nominal", 
-      "sort":"-x",
       "title": "Statistics",
       "axis": {
                "titleColor": "white",
@@ -78,6 +104,7 @@
     "y": {
       "field": "Team", 
       "type": "ordinal",
+      "sort": {"field": "Position"},
       "axis": {
               "titleColor": "white",
               "labelColor": "white",
@@ -94,8 +121,15 @@
       "value": 0.3
     },
     "stroke": {
-      "condition": {"param": "Team_filter", "empty": false, "value": "black"},
+      "condition": [
+        {"param": "Team_filter", "empty": false, "value": "black"},
+        {"test": "datum.Premier === Premier_param", "value": "black"}
+      ],
       "value": null
+    },
+    "strokeWidth": {
+        "condition":{"test": "datum.Premier === Premier_param", "value": 3},
+      "value": 1
     },
     "tooltip": [
       {"field": "D", "type": "nominal", "title": "Disposals"},
