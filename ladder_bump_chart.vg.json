@@ -27,7 +27,7 @@
     "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_actual_only.csv"
   },
   "width": 600,
-  "height": 500,
+  "height": 530,
   "padding": 10,
   "layer": [
     {

@@ -88,21 +88,21 @@
         "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
       },
       {
-        "filter": {"field": "key", "oneOf": ["D", "CL", "CP", "UP", "ED", "DE%", "MG", "M", "CM", "MI5"]}
+        "filter": {"field": "key", "oneOf": ["D", "CL", "CP", "UP","CG","TO","DE%", "MG", "M", "CM", "MI5"]}
       },
       {
         "calculate":"parseInt(datum.Position)", "as": "Position"
       }
     ],
     "mark": "rect",
-    "width": 260,
+    "width": 280,
     "height": 450,
     "encoding": {
         "x": {
           "field": "key",
           "type": "nominal", 
           "title": "Ball Use Stats",
-          "sort": ["D", "CP", "UP", "CL", "MG", "ED", "DE%", "M", "CM", "MI5"],
+          "sort": ["D", "CP", "UP", "CL", "MG", "DE%", "TO", "CG", "M", "CM", "MI5"],
           "axis": {
                   "titleColor": "white",
                   "labelColor": "white",
@@ -167,7 +167,7 @@
       }
     ],
     "mark": "rect",
-    "width": 150,
+    "width": 160,
     "height": 450,
     "encoding": {
         "x": {
@@ -237,14 +237,14 @@
         "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
       },
       {
-        "filter": {"field": "key", "oneOf": ["HO", "CG", "AF", "SC", "BO", "TO","1%"]}
+        "filter": {"field": "key", "oneOf": ["HO", "AF", "SC", "BO", "1%"]}
       },
       {
         "calculate":"parseInt(datum.Position)", "as": "Position"
       }
     ],
     "mark": "rect",
-    "width": 180,
+    "width": 140,
     "height": 450,
     "encoding": {
         "x": {

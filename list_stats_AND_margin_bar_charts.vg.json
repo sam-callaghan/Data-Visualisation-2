@@ -60,7 +60,7 @@
   "vconcat": [
     {
       "width": 570,
-      "height": 320,
+      "height": 280,
       "mark": "bar",
       "encoding": {
         "x": {
@@ -146,7 +146,7 @@
     },
         {
           "width": 570,
-          "height": 150,
+          "height": 170,
           "mark": "bar",
           "encoding": {
             "x": {
@@ -221,13 +221,14 @@
             "stroke": {"value": "black"},
             "tooltip": [
               {"field": "Margin", "type": "nominal", "title": "Margin"},
+              {"field": "Height Differential", "type": "nominal", "title": "Height Diff","format": ".1f"},
               {"field": "Team 2", "type": "nominal", "title": "Opposition"}
             ]
           }
         },
         {
           "width": 570,
-          "height": 150,
+          "height": 170,
           "mark": "bar",
           "encoding": {
             "x": {
@@ -302,6 +303,7 @@
             "stroke": {"value": "black"},
             "tooltip": [
               {"field": "Margin", "type": "nominal", "title": "Margin"},
+              {"field": "Age Differential", "type": "nominal", "title": "Age Diff","format": ".1f"},
               {"field": "Team 2", "type": "nominal", "title": "Opposition"}
             ]
           }

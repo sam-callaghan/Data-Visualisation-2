@@ -43,7 +43,8 @@
           ["Sydney", [150.965, -33.78], 90000],
           ["Perth", [115.6, -31.8], 50000]
         ],
-        "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"]
+        "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"],
+        "name": "City Zoom: "
       }
     }
   ],

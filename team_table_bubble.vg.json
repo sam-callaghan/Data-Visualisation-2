@@ -4,7 +4,7 @@
 "params": [
     {
       "name": "Year_filter",
-      "value": "2017",
+      "value": "Total",
       "bind": {
         "input": "select",
         "options": [
@@ -24,6 +24,7 @@
     },
     {
       "name": "Team_filter",
+      "value": ["Hawthorn", "Sydney", "Geelong", "Gold Coast", "Melbourne", "Carlton"],
       "select": {"type": "point", "fields": ["Team 1"]},
       "bind": {
         "input": "select",
@@ -82,8 +83,8 @@
     "background": "grey"
   },
   "mark": "rect",
-  "width": 500,
-  "height": 500,
+  "width": 550,
+  "height": 550,
   "encoding": {
     "y": {
       "field": "Team 1 Label",
