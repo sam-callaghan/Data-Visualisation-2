@@ -92,7 +92,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "magenta"
+                "value": "blue"
               },
               "value": "black"
             },
@@ -149,7 +149,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "magenta"
+                "value": "blue"
               },
               "value": "black"
             },
@@ -252,7 +252,7 @@
             "stroke": {
               "condition": {
                 "test": "datum.Home === Home_param",
-                "value": "magenta"
+                "value": "blue"
               },
               "value": "black"
             },

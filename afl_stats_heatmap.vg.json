@@ -88,7 +88,7 @@
       }
     ],
     "mark": "rect",
-    "width": 300,
+    "width": 260,
     "height": 450,
     "encoding": {
         "x": {
@@ -160,7 +160,7 @@
       }
     ],
     "mark": "rect",
-    "width": 180,
+    "width": 150,
     "height": 450,
     "encoding": {
         "x": {
@@ -173,8 +173,7 @@
                   "labelColor": "white",
                   "titleFontSize": 18,
                   "titlePadding": 20,
-                  "labelAngle": 0,
-                  "titleBaseline": "top"
+                  "labelAngle": 0
                   }
         },
         "y": {
@@ -238,7 +237,7 @@
       }
     ],
     "mark": "rect",
-    "width": 210,
+    "width": 180,
     "height": 450,
     "encoding": {
         "x": {
