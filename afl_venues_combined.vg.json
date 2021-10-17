@@ -30,17 +30,18 @@
       }
     },
     {"name": "Home_param", "value": "Y"},
+    {"name": "Venue_param", "value": ["M.C.G.", "Adelaide Oval", "Sydney Showground", "Perth Stadium"]},
     {
       "name": "City_Zoom",
-      "value": ["Melbourne", [144.2, -37.6], 35000],
+      "value": ["Melbourne", [144.3, -37.6], 35000],
       "bind": {
         "input": "select",
         "options": [
-          ["Melbourne", [144.2, -37.6], 35000], 
-          ["Adelaide", [138.1, -34.6], 40000], 
-          ["Brisbane", [152.6, -27],20000], 
-          ["Sydney",[151, -33.78],100000], 
-          ["Perth",[115.6, -31.8],50000]
+          ["Melbourne", [144.3, -37.6], 35000],
+          ["Adelaide", [138.1, -34.6], 40000],
+          ["Brisbane", [152.6, -27], 20000],
+          ["Sydney", [150.965, -33.78], 90000],
+          ["Perth", [115.6, -31.8], 50000]
         ],
         "labels": ["Melbourne", "Adelaide", "Brisbane", "Sydney", "Perth"]
       }
@@ -63,13 +64,20 @@
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/oceania_topoJSON.topojson",
             "format": {"type": "topojson", "feature": "oceania.geo"}
           },
-          "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "darkgray"}
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgrey",
+            "stroke": "darkgray"
+          }
         },
         {
           "data": {
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
           },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
+          "transform": [
+            {"filter": "datum.Team == AFL_team"},
+            {"filter": {"not": {"field": "City Bin", "oneOf": ["Melbourne", "Perth", "Adelaide", "Sydney", "Brisbane"]}}}
+          ],
           "mark": {"type": "circle"},
           "encoding": {
             "longitude": {"field": "Longitude", "type": "quantitative"},
@@ -95,9 +103,7 @@
               ],
               "value": 2
             },
-            "opacity": {
-              "value": 1
-            },
+            "opacity": {"value": 1},
             "color": {
               "field": "Margin Bin",
               "type": "quantitative",
@@ -109,25 +115,108 @@
               }
             },
             "tooltip": [
+              {"field": "Margin Bin", "type": "quantitative", "title": "Average Margin"},
               {
-                "field": "Margin Bin",
-                "type": "quantitative",
-                "title": "Average Margin"
-              }
+                "field": "Venue (Alternative)",
+                "type": "nominal",
+                "title": "Venue (2nd Name)"
+              },
+              {"field": "Length", "type": "quantitative", "title": "Length"},
+              {"field": "Width ", "type": "quantitative", "title": "Width"},
+              {"field": "Capacity", "type": "quantitative", "title": "Capacity"}
             ]
           }
         },
         {
-           "data": {
+          "data": {
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
           },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
+          "transform": [
+            {"filter": "datum.Team == AFL_team"},
+            {"filter": {"field": "City Bin", "oneOf": ["Melbourne", "Perth", "Adelaide", "Sydney", "Brisbane"]}}
+          ],
+          "mark": {"type": "circle"},
           "encoding": {
             "longitude": {"field": "Longitude", "type": "quantitative"},
             "latitude": {"field": "Latitude", "type": "quantitative"},
-            "text": {"field": "City Bin", "type": "nominal"}
+            "size": {
+              "condition": {
+                "test": "datum['City Bin'] === City_Zoom[0]",
+                "value": 1200
+              },
+              "value": 500
+            },
+            "stroke": {
+              "condition": {
+                "test": "datum.Home === Home_param",
+                "value": "magenta"
+              },
+              "value": "black"
+            },
+            "strokeWidth": {
+              "condition": [
+                {"test": "datum.Home === Home_param", "value": 4},
+                {"test": "datum['City Bin'] === City_Zoom[0]", "value": 4}
+              ],
+              "value": 2
+            },
+            "opacity": {"value": 1},
+            "color": {
+              "field": "Margin Bin",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "redyellowgreen",
+                "domainMid": 0,
+                "domainMax": 100,
+                "domainMin": -100
+              }
+            },
+            "tooltip": [
+              {"field": "Margin Bin", "type": "quantitative", "title": "Average Margin"}
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only_bins.csv"
           },
-          "mark": {"type": "text", "align": "right", "dx": -20}
+          "layer": [
+            {
+              "transform": [
+                {"filter": "datum.Team == AFL_team"},
+                {"filter": {"not": {"field": "City Bin", "oneOf": ["Melbourne", "Perth"]}}}
+            ],
+              "encoding": {
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "text": {"field": "City Bin", "type": "nominal"}
+              },
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -20,
+                "fontSize": 16
+              }
+            },
+            {
+              "transform": [
+                {"filter": "datum.Team == AFL_team"},
+                {"filter": {"field": "City Bin", "oneOf": ["Melbourne", "Perth"]}}
+                ],
+              "encoding": {
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "text": {"field": "City Bin", "type": "nominal"}
+              },
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 20,
+                "fontSize": 16
+              }
+            }
+          ]
+
         }
       ]
     },
@@ -145,7 +234,11 @@
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/australia_mapData.topojson",
             "format": {"type": "topojson", "feature": "collection"}
           },
-          "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "darkgray"}
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgray",
+            "stroke": "darkgray"
+          }
         },
         {
           "data": {
@@ -167,9 +260,7 @@
               "condition": {"test": "datum.Home === Home_param", "value": 3.5},
               "value": 2
             },
-            "opacity": {
-              "value": 1
-            },
+            "opacity": {"value": 1},
             "color": {
               "field": "Margin",
               "type": "quantitative",
@@ -187,26 +278,63 @@
               }
             },
             "tooltip": [
-              {"field": "Margin", "type": "quantitative","title": "Average Margin"},
-              {"field": "Venue (Alternative)", "type": "nominal", "title": "Venue (2nd Name)"},
-              {"field": "Length", "type": "quantitative","title": "Length"},
-              {"field": "Width ", "type": "quantitative","title": "Width"},
-              {"field": "Capacity", "type": "quantitative","title": "Capacity"}
+              {
+                "field": "Margin",
+                "type": "quantitative",
+                "title": "Average Margin"
+              },
+              {
+                "field": "Venue (Alternative)",
+                "type": "nominal",
+                "title": "Venue (2nd Name)"
+              },
+              {"field": "Length", "type": "quantitative", "title": "Length"},
+              {"field": "Width ", "type": "quantitative", "title": "Width"},
+              {"field": "Capacity", "type": "quantitative", "title": "Capacity"}
             ]
           },
           "mark": {"type": "circle"}
         },
         {
-           "data": {
+          "data": {
             "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_venue_only.csv"
           },
-          "transform": [{"filter": "datum.Team == AFL_team"}],
-          "encoding": {
-            "longitude": {"field": "Longitude", "type": "quantitative"},
-            "latitude": {"field": "Latitude", "type": "quantitative"},
-            "text": {"field": "Venue", "type": "nominal"}
-          },
-          "mark": {"type": "text", "align": "left", "dx": 20, "fontSize": 12}
+          "layer": [
+            {
+              "transform": [
+                {"filter": "datum.Team == AFL_team"},
+                {"filter": {"not": {"field": "Venue", "oneOf": ["M.C.G.", "Adelaide Oval", "Sydney Showground", "Perth Stadium", "Kardinia Park"]}}}
+            ],
+              "encoding": {
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "text": {"field": "Venue", "type": "nominal"}
+              },
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -20,
+                "fontSize": 16
+              }
+            },
+            {
+              "transform": [
+                {"filter": "datum.Team == AFL_team"},
+                {"filter": {"field": "Venue", "oneOf": ["M.C.G.", "Adelaide Oval", "Sydney Showground", "Perth Stadium", "Kardinia Park"]}}
+                ],
+              "encoding": {
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "text": {"field": "Venue", "type": "nominal"}
+              },
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 20,
+                "fontSize": 16
+              }
+            }
+          ]
         }
       ]
     }

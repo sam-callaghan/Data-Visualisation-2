@@ -1,140 +1,221 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bump chart",
-  "data": {
-    "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_ladder_only.csv"
-  },
-  "width": 700,
-  "height": 500,
   "config": {"background": "grey"},
-  "params": [{
-          "name": "Premier_param", "value": "Y"
-      }],
-  "layer":[
+  "params": [
+    {"name": "Premier_param", "value": "Y"},
     {
-      "params": [{
+      "name": "Year_Select",
+      "value": "2017",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/sam-callaghan/Data-Visualisation-2/main/data/afl_stats_actual_only.csv"
+  },
+  "width": 600,
+  "height": 500,
+  "layer": [
+    {
+      "params": [
+        {
           "name": "Team_Filter",
-          "select": {"type": "point", "fields": ["Team"]},
-          "value": ["Richmond","Hawthorn", "Western Bulldogs"],
+          "select": {"type": "point", "fields": ["Team Label"]},
+          "value": ["RIC", "HAW", "WBD"],
           "bind": "legend"
-      }],
-      "mark": {"type": "line", "point": true},
+        }
+      ],
+      "mark": {"type": "line"},
       "encoding": {
         "x": {
-          "field": "Year", 
-          "type": "temporal", 
-          "scale":{"domainMin":"2011", "domainMax": "2021"},
+          "field": "Year",
+          "type": "quantitative",
+          "scale": {"domainMin": 2011, "domainMax": 2020},
           "axis": {
-                    "titleColor": "white",
-                    "labelColor": "white",
-                    "titleFontSize": 15
-                  }
-          },
+            "grid": true,
+            "titleColor": "white",
+            "labelColor": "white",
+            "labelFontSize": 12,
+            "titleFontSize": 18,
+            "titlePadding": 20,
+            "format": ".0f"
+          }
+        },
         "y": {
-          "field": "Position", 
-          "type": "ordinal", 
-          "sort":"-x",
+          "field": "Position",
+          "type": "ordinal",
+          "sort": "-x",
           "axis": {
-                    "titleColor": "white",
-                    "labelColor": "white",
-                    "titleFontSize": 15
-                  }
-          },
+            "titleColor": "white",
+            "labelColor": "white",
+            "labelFontSize": 12,
+            "titleFontSize": 18,
+            "titlePadding": 20
+          }
+        },
         "order": {"field": "Team", "type": "nominal"},
         "color": {
-          "field": "Team",
-          "scale":{"domain": [            
-                        "Adelaide",
-                        "Brisbane Lions",
-                        "Carlton",
-                        "Collingwood",
-                        "Essendon",
-                        "Fremantle",
-                        "Geelong",
-                        "Gold Coast",
-                        "Greater Western Sydney",
-                        "Hawthorn",
-                        "Melbourne",
-                        "North Melbourne",
-                        "Port Adelaide",
-                        "Richmond",
-                        "St Kilda",
-                        "Sydney",
-                        "West Coast",
-                        "Western Bulldogs"
-                        ],
-                    "range":["green", "maroon", "navy", "lightgrey", "lime", "purple", "white", "aqua", "orange", "deepskyblue", "red", "indigo", "black", "yellow", "pink", "coral", "deeppink", "blue"]
-                    },
-            "legend": {
-                    "titleColor": "white",
-                    "titleFontSize": 15,
-                    "labelFontSize": 11,
-                    "labelSeparation": 5,
-                    "labelColor": "white"
-                  }
+          "field": "Team Label",
+          "scale": {
+            "domain": [
+              "ADE",
+              "BRI",
+              "CAR",
+              "COL",
+              "ESS",
+              "FRE",
+              "GEE",
+              "GCS",
+              "GWS",
+              "HAW",
+              "MEL",
+              "NOR",
+              "POR",
+              "RIC",
+              "STK",
+              "SYD",
+              "WCE",
+              "WBD"
+            ],
+            "range": [
+              "green",
+              "maroon",
+              "navy",
+              "lightgrey",
+              "lime",
+              "purple",
+              "white",
+              "aqua",
+              "orange",
+              "brown",
+              "red",
+              "indigo",
+              "black",
+              "yellow",
+              "pink",
+              "coral",
+              "deeppink",
+              "blue"
+            ]
           },
+          "legend": {
+            "orient": "left",
+            "titleColor": "white",
+            "titleFontSize": 18,
+            "labelFontSize": 15,
+            "labelSeparation": 5,
+            "labelColor": "white"
+          }
+        },
         "opacity": {
           "condition": {"param": "Team_Filter", "value": 1},
           "value": 0.2
         },
-        "size": {
-          "value": 1,
-          "condition": {"param": "Team_Filter", "value": 4}
-    
-        }
-        }
+        "size": {"value": 1, "condition": {"param": "Team_Filter", "value": 4}}
+      }
     },
     {
       "mark": {"type": "circle"},
-      "params": [
-        {
-          "name": "Year_Select",
-          "select": {"type": "point", "encodings": ["x"]}
-        }
-      ],
       "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
-        "y": {"field": "Position", "type": "ordinal", "sort":"-x"},
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Position", "type": "ordinal", "sort": "-x"},
         "color": {
-          "field": "Team",
-          "scale":{"domain": [            
-                "Adelaide",
-                "Brisbane Lions",
-                "Carlton",
-                "Collingwood",
-                "Essendon",
-                "Fremantle",
-                "Geelong",
-                "Gold Coast",
-                "Greater Western Sydney",
-                "Hawthorn",
-                "Melbourne",
-                "North Melbourne",
-                "Port Adelaide",
-                "Richmond",
-                "St Kilda",
-                "Sydney",
-                "West Coast",
-                "Western Bulldogs"],
-                "range":["green", "maroon", "navy", "lightgrey", "lime", "purple", "white", "aqua", "orange", "deepskyblue", "red", "indigo", "black", "yellow", "pink", "coral", "deeppink", "blue"]}
-          },
+          "field": "Team Label",
+          "scale": {
+            "domain": [
+              "ADE",
+              "BRI",
+              "CAR",
+              "COL",
+              "ESS",
+              "FRE",
+              "GEE",
+              "GCS",
+              "GWS",
+              "HAW",
+              "MEL",
+              "NOR",
+              "POR",
+              "RIC",
+              "STK",
+              "SYD",
+              "WCE",
+              "WBD"
+            ],
+            "range": [
+              "green",
+              "maroon",
+              "navy",
+              "lightgrey",
+              "lime",
+              "purple",
+              "white",
+              "aqua",
+              "orange",
+              "brown",
+              "red",
+              "indigo",
+              "black",
+              "yellow",
+              "pink",
+              "coral",
+              "deeppink",
+              "blue"
+            ]
+          }
+        },
         "opacity": {
-          "condition":[
-            {"param": "Year_Select","value": 1},
-            {"param": "Team_Filter","value": 1}
+          "condition": [
+            {"test": "datum.Year === Year_Select", "value": 1},
+            {"param": "Team_Filter", "value": 1}
           ],
           "value": 0.2
         },
         "size": {
-          "condition":[
+          "condition": [
             {"test": "datum.Premier === Premier_param", "value": 500},
-            {"param": "Team_Filter", "value": 200}
-             
+            {"param": "Team_Filter", "value": 250},
+            {"test": "datum.Year === Year_Select", "value": 150}
           ]
         },
         "stroke": {"value": "black"}
       }
+    },
+    {
+      "transform": [{"filter": "datum.Year == 2020"}],
+       "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 20,
+                "fontSize": 16,
+                "color": "white"
+              },
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Position", "type": "ordinal", "sort": "-x"},
+        "text": {"field": "Team", "type": "nominal"},
 
+        "opacity": {
+          "condition": [
+            {"test": "datum.Year === Year_Select", "value": 1},
+            {"param": "Team_Filter", "value": 1}
+          ],
+          "value": 0
+        }
+      }
     }
   ]
 }

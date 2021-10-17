@@ -6,7 +6,7 @@
      "params": [
     {
       "name": "Year_filter",
-      "value": "2020",
+      "value": "2017",
       "bind": {
         "input": "select",
         "options": [
@@ -25,6 +25,7 @@
     },
     {
       "name": "Team_filter",
+      "value": ["Richmond", "Adelaide"],
       "select": {"type": "point", "fields": ["Team"]},
       "bind": {
         "input": "select",
@@ -57,13 +58,7 @@
       "bind": {
         "input": "select",
 
-        "options": [
-          ["G", "D", "M"],
-          ["D", "CP", "UP"],
-          ["G", "I50", "B"],
-          ["T", "1%", "T50"]
-       ],
-       "labels": [
+       "options": [
          "General",
          "Disposals",
          "Offensive",
@@ -76,65 +71,216 @@
           "name": "Premier_param", "value": "Y"
      }
   ],
-  "transform": [
-    {
-      "filter": "datum.Year == Year_filter"
-    },
-    {
-      "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
-    },
-    {
-      "calculate":"parseInt(datum.Position)", "as": "Position"
-    }
-  ],
   "config": {"background": "grey"},
-  "mark": "rect",
-  "encoding": {
-    "x": {
-      "field": "key", 
-      "type": "nominal", 
-      "title": "Statistics",
-      "axis": {
-               "titleColor": "white",
-               "labelColor": "white",
-               "titleFontSize": 15,
-               "labelAngle": 0
-              }
+  "hconcat":[
+    {
+      "transform": [
+      {
+        "filter": "datum.Year == Year_filter"
+      },
+      {
+        "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
+      },
+      {
+        "filter": {"field": "key", "oneOf": ["D", "CL", "CP", "UP", "ED", "DE%", "MG", "M", "CM", "MI5"]}
+      },
+      {
+        "calculate":"parseInt(datum.Position)", "as": "Position"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+          "field": "key",
+          "type": "nominal", 
+          "title": "Ball Use Stats",
+          "sort": ["D", "CP", "UP", "CL", "MG", "ED", "DE%", "M", "CM", "MI5"],
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 18,
+                  "titlePadding": 20,
+                  "labelAngle": 0
+                  }
+        },
+        "y": {
+          "field": "Team Label", 
+          "type": "ordinal",
+          "sort": {"field": "Position"},
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 18,
+                  "titlePadding": 20
+                  }
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {"scheme": "redyellowgreen", "reverse": true}
+        },
+        "opacity": {
+          "condition": [
+            {"param": "Team_filter", "value": 1}
+            ],
+
+          "value": 0.3
+        },
+        "stroke": {
+          "condition": [
+            {"param": "Team_filter", "empty": false, "value": "black"},
+            {"test": "datum.Premier === Premier_param", "value": "black"}
+          ],
+          "value": null
+        },
+        "strokeWidth": {
+            "condition":{"test": "datum.Premier === Premier_param", "value": 3},
+          "value": 1
+        },
+        "tooltip": [
+          {"field": "value", "type": "nominal", "title": "Ranking"}
+          
+        ]
+      }
     },
-    "y": {
-      "field": "Team", 
-      "type": "ordinal",
-      "sort": {"field": "Position"},
-      "axis": {
-              "titleColor": "white",
-              "labelColor": "white",
-              "titleFontSize": 15
-              }
+    {
+      "transform": [
+      {
+        "filter": "datum.Year == Year_filter"
+      },
+      {
+        "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
+      },
+      {
+        "filter": {"field": "key", "oneOf": ["G", "B", "GA", "I50", "T", "ITC", "T50"]}
+      },
+      {
+        "calculate":"parseInt(datum.Position)", "as": "Position"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+          "field": "key",
+          "type": "nominal", 
+          "title": "Offensive/Defensive Stats",
+          "sort": ["G", "GA", "I50", "T", "T50", "ITC"],
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 18,
+                  "titlePadding": 20,
+                  "labelAngle": 0
+                  }
+        },
+        "y": {
+          "field": "Team Label", 
+          "type": "ordinal",
+          "sort": {"field": "Position"},
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 0
+                  }
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {"scheme": "redyellowgreen", "reverse": true}
+        },
+        "opacity": {
+          "condition": [
+            {"param": "Team_filter", "value": 1}
+            ],
+
+          "value": 0.3
+        },
+        "stroke": {
+          "condition": [
+            {"param": "Team_filter", "empty": false, "value": "black"},
+            {"test": "datum.Premier === Premier_param", "value": "black"}
+          ],
+          "value": null
+        },
+        "strokeWidth": {
+            "condition":{"test": "datum.Premier === Premier_param", "value": 3},
+          "value": 1
+        },
+        "tooltip": [
+          {"field": "value", "type": "nominal", "title": "Ranking"}
+          
+        ]
+      }
     },
-    "color": {
-      "field": "value",
-      "type": "quantitative",
-      "scale": {"scheme": "redyellowgreen", "reverse": true}
-    },
-    "opacity": {
-      "condition": {"param": "Team_filter", "value": 1},
-      "value": 0.3
-    },
-    "stroke": {
-      "condition": [
-        {"param": "Team_filter", "empty": false, "value": "black"},
-        {"test": "datum.Premier === Premier_param", "value": "black"}
-      ],
-      "value": null
-    },
-    "strokeWidth": {
-        "condition":{"test": "datum.Premier === Premier_param", "value": 3},
-      "value": 1
-    },
-    "tooltip": [
-      {"field": "D", "type": "nominal", "title": "Disposals"},
-      {"field": "G", "type": "nominal", "title": "Goals"},
-      {"field": "T", "type": "nominal", "title": "Tackles"}
-    ]
-  }
+    {
+      "transform": [
+      {
+        "filter": "datum.Year == Year_filter"
+      },
+      {
+        "fold": ["K", "HB", "D", "M", "G", "GA", "I50", "BH", "T", "HO", "FF", "FA", "CL", "CG", "R50", "AF", "SC", "CP", "UP", "ED", "DE%", "CM", "MI5", "1%", "BO", "CCL", "SCL", "MG", "TO", "ITC", "T50" ]
+      },
+      {
+        "filter": {"field": "key", "oneOf": ["HO", "CG", "AF", "SC", "BO", "TO","1%"]}
+      },
+      {
+        "calculate":"parseInt(datum.Position)", "as": "Position"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+          "field": "key",
+          "type": "nominal", 
+          "title": "Random Stats",
+          "sort": ["AF", "SC", "HO", "BO", "1%", "CG", "TO"],
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 18,
+                  "titlePadding": 20,
+                  "labelAngle": 0
+                  }
+        },
+        "y": {
+          "field": "Team Label", 
+          "type": "ordinal",
+          "sort": {"field": "Position"},
+          "axis": {
+                  "titleColor": "white",
+                  "labelColor": "white",
+                  "titleFontSize": 0
+                  }
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {"scheme": "redyellowgreen", "reverse": true}
+        },
+        "opacity": {
+          "condition": [
+            {"param": "Team_filter", "value": 1}
+            ],
+
+          "value": 0.3
+        },
+        "stroke": {
+          "condition": [
+            {"param": "Team_filter", "empty": false, "value": "black"},
+            {"test": "datum.Premier === Premier_param", "value": "black"}
+          ],
+          "value": null
+        },
+        "strokeWidth": {
+            "condition":{"test": "datum.Premier === Premier_param", "value": 3},
+          "value": 1
+        },
+        "tooltip": [
+          {"field": "value", "type": "nominal", "title": "Ranking"}
+          
+        ]
+      }
+    }
+  ]
+  
 }

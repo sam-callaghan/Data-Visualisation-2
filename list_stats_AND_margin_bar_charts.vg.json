@@ -59,7 +59,7 @@
   "config": {"background": "grey"},
   "vconcat": [
     {
-      "width": 600,
+      "width": 570,
       "height": 320,
       "mark": "bar",
       "encoding": {
@@ -145,7 +145,7 @@
       }
     },
         {
-          "width": 600,
+          "width": 570,
           "height": 150,
           "mark": "bar",
           "encoding": {
@@ -226,7 +226,7 @@
           }
         },
         {
-          "width": 600,
+          "width": 570,
           "height": 150,
           "mark": "bar",
           "encoding": {
