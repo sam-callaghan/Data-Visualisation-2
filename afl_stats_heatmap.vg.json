@@ -25,7 +25,6 @@
     },
     {
       "name": "Team_filter",
-      "value": ["Richmond", "Adelaide"],
       "select": {"type": "point", "fields": ["Team"]},
       "bind": {
         "input": "select",
@@ -89,6 +88,8 @@
       }
     ],
     "mark": "rect",
+    "width": 300,
+    "height": 450,
     "encoding": {
         "x": {
           "field": "key",
@@ -159,6 +160,8 @@
       }
     ],
     "mark": "rect",
+    "width": 180,
+    "height": 450,
     "encoding": {
         "x": {
           "field": "key",
@@ -170,7 +173,8 @@
                   "labelColor": "white",
                   "titleFontSize": 18,
                   "titlePadding": 20,
-                  "labelAngle": 0
+                  "labelAngle": 0,
+                  "titleBaseline": "top"
                   }
         },
         "y": {
@@ -186,7 +190,13 @@
         "color": {
           "field": "value",
           "type": "quantitative",
-          "scale": {"scheme": "redyellowgreen", "reverse": true}
+          "scale": {"scheme": "redyellowgreen", "reverse": true},
+          "legend": {
+            "title": "Ranking",
+            "titleColor": "white",
+            "labelColor": "white",
+            "titleFontSize": 18,
+            "labelFontSize": 15          }
         },
         "opacity": {
           "condition": [
@@ -228,6 +238,8 @@
       }
     ],
     "mark": "rect",
+    "width": 210,
+    "height": 450,
     "encoding": {
         "x": {
           "field": "key",
