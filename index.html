@@ -24,6 +24,8 @@
 <style>
   h1 {text-align: left; font-size: 70px; color: white; font-family: "URWAgendaW01-Bold";}
   div {font-family: "URWAgendaW01-Bold"; }
+  th {font-size: 20px; padding: 5px; border-style: solid; border-color: white;}
+  td {font-size: 16px; padding: 5px; border-style: solid; border-color: white;}
  
 </style>
 
@@ -217,11 +219,15 @@
         </div>
 
         <div class="pure-g", style="width: 1500px; margin: auto; border-style: solid; border-color: white; padding: 20px;">
+          
+          <div class="pure-u-2-3", style="text-align: right;">
+            <div id="Ladder" class="vis-container"></div>
+          </div>
 
-          <div class="pure-u-1-3">
+          <div class="pure-u-1-3"; style="text-align: center;">
             <div class="description description-left">
-              <h2 style = "color:white; font-size: 30px; padding-right: 30px;">Ladder</h2>
-              <p style = "color:white; font-size: 20px; padding-right: 30px;">
+              <h2 style = "color:white; font-size: 30px; padding-left: 30px;">Ladder</h2>
+              <p style = "color:white; font-size: 20px; padding-left: 30px;">
                AFL teams play 23 regular  games to determine their ladder position at the end of the season. The top 8 teams play in the finals, with the higher ranked teams receiving advantages like extra chance games or home ground.<br>
                However, success is measured by a team's ability to win the grand final and be crowned the <span style="font-size: 30px;">PREMIER</span> team. <br> <br> 
                The dominant teams of the last few years include <span style="color: brown; font-weight: bold">Hawthorn</span> , who won three premierships from 2013-2015, and <span style="color: yellow; font-weight: bold">Richmond</span> , who also won three premierships from 2017-2020. <br><br>
@@ -231,27 +237,138 @@
             </div>
           </div>
 
-          <div class="pure-u-2-3", style="text-align: right;">
-            <div id="Ladder" class="vis-container"></div>
-          </div>
 
       </div>
 
         <div class="pure-g", style="width: 1500px; margin: auto; border-style: solid; border-color: white; padding: 20px;">
 
-          <div class="pure-u-2-3", style="text-align: left;">
-            <div id="Stats" class="vis-container"></div>
-          </div>
 
-          <div class="pure-u-1-3">
+          <div class="pure-u-1-3", style="text-align: center;">
             <div class="description description-left">
-              <h2 style = "color:white; font-size: 30px; padding-right: 30px;">Rainfall</h2>
-              <p style = "color:white; font-size: 20px; padding-right: 30px;">
-                "Wet Weather footy" is a term thrown around alot, describing the different playstyle required to handle a slippery ball. <br> <br>
-                During their premiership streak, Richmond were renowned for their ability to play in the wet. This trend can be seen in their 2017 season, where their average margin increased as the rainfall did. <br> <br>
-              </p>
+              <h2 style = "color:white; font-size: 30px; padding-left: 0px;">Statistics</h2>
+              <p style = "color:white; font-size: 20px; padding-left: 0px;">
+                 The range of playstyles by teams can be evaulated by looking at the statistics they excel at or not. 
+                 Certain game styles have often been emulated over the years because of their success in winning <span style="color: black; font-weight: bold">premierships</span>.
+                 The heatmap indicates the relative ranking of each team in a particular season.<br><br>
+              <div class="pure-u-1-2" style= "text-align: center;">
+                 <table style = "color:white; float: left;">
+                  <tr>
+                    <th>Stat</th>
+                    <th>Stat Name</th>
+                    <th>Stat</th>
+                    <th>Stat Name</th>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>Disposals </td>
+                    <td>T</td>
+                    <td>Tackles</td>
+                  </tr>
+                  <tr>
+                    <td>CP</td>
+                    <td>Contested Possesions</td>
+                    <td>T50</td>
+                    <td>Tackles Inside 50</td>
+                  </tr>
+                  <tr>
+                    <td>UP</td>
+                    <td>Uncontested Possesions</td>
+                    <td>ITC</td>
+                    <td>Intercepts</td>
+                  </tr>
+                  <tr>
+                    <td>CL</td>
+                    <td>Clearances</td>
+                    <td>AF</td>
+                    <td>AFL Fantasy Points</td>
+                  </tr>
+                  <tr>
+                    <td>MG</td>
+                    <td>Meters Gained</td>
+                    <td>SC</td>
+                    <td>Supercoach Points</td>
+                  </tr>
+                  <tr>
+                    <td>ED</td>
+                    <td>Effective Disposals </td>
+                    <td>HO</td>
+                    <td>Hitouts</td>
+                  </tr>
+                  <tr>
+                    <td>DE%</td>
+                    <td>Disposal Efficiency </td>
+                    <td>BO</td>
+                    <td>Bounces</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>Marks</td>
+                    <td>1%</td>
+                    <td>One Percenters </td>
+                  </tr>
+                  <tr>
+                    <td>CM</td>
+                    <td>Contested Marks</td>
+                    <td>DE%</td>
+                    <td>Disposal Efficiency </td>
+                  </tr>
+                  <tr>
+                    <td>MI5</td>
+                    <td>Marks Inside 50</td>
+                    <td>CG</td>
+                    <td>Clangers</td>
+                  </tr>
+                  <tr>
+                    <td>G</td>
+                    <td>Goals </td>
+                    <td>TO</td>
+                    <td>Turnovers</td>
+                  </tr>
+                  <tr>
+                    <td>GA</td>
+                    <td>Goal Assists </td>
+                    <td>MI5</td>
+                    <td>Marks Inside 50</td>
+                  </tr>
+                  <tr>
+                    <td>I50</td>
+                    <td>Inside 50s</td>
+                  </tr>
+                </table>
+              </div>
+              
             </div>
           </div>
+
+          <div class="pure-u-2-3", style="text-align: left;">
+            <div id="Stats" class="vis-container"></div>
+
+            <div class="pure-u-1-3", style="text-align: center;">
+              <div class="description description-left">
+                <h2 style = "color:white; font-size: 20px; padding-left: 0px;">Statistics</h2>
+                <p style = "color:white; font-size: 15px; padding-left: 0px;">
+                   The differing playstyles of different playstyles can be reflected in the types of stats they excel at or perform poorly at. The heatmap indicates the relative ranking of each team in a particular season <br><br>          
+              </div>
+            </div>
+
+            <div class="pure-u-1-4", style="text-align: center;">
+              <div class="description description-left">
+                <h2 style = "color:white; font-size: 20px; padding-left: 30px;">Statistics</h2>
+                <p style = "color:white; font-size: 15px; padding-left: 30px;">
+                   The differing playstyles of different playstyles can be reflected in the types of stats they excel at or perform poorly at. The heatmap indicates the relative ranking of each team in a particular season <br><br>          
+              </div>
+            </div>
+
+            <div class="pure-u-1-3", style="text-align: center;">
+              <div class="description description-left">
+                <h2 style = "color:white; font-size: 20px; padding-left: 30px;">Statistics</h2>
+                <p style = "color:white; font-size: 15px; padding-left: 30px;">
+                   The differing playstyles of different playstyles can be reflected in the types of stats they excel at or perform poorly at. The heatmap indicates the relative ranking of each team in a particular season <br><br>          
+              </div>
+            </div>
+          </div>
+
+
 
         </div>
 

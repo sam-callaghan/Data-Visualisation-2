@@ -46,24 +46,31 @@
           "St Kilda",
           "Sydney",
           "West Coast",
-          "Western Bulldogs"
+          "Western Bulldogs",
+          null
        ],
+       "labels": [
+        "Adelaide",
+        "Brisbane Lions",
+        "Carlton",
+        "Collingwood",
+        "Essendon",
+        "Fremantle",
+        "Geelong",
+        "Gold Coast",
+        "Greater Western Sydney",
+        "Hawthorn",
+        "Melbourne",
+        "North Melbourne",
+        "Port Adelaide",
+        "Richmond",
+        "St Kilda",
+        "Sydney",
+        "West Coast",
+        "Western Bulldogs",
+        "None"
+     ],
         "name": "AFL Team:"
-      }
-    },
-    {
-      "name": "Stats_filter",
-      "value": ["G", "D", "M"],
-      "bind": {
-        "input": "select",
-
-       "options": [
-         "General",
-         "Disposals",
-         "Offensive",
-         "Defensive"
-       ],
-        "name": "Stats:"
       }
     },
     {
